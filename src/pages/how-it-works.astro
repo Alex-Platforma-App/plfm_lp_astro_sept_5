@@ -1,0 +1,485 @@
+---
+// How It Works - Platforma App
+const pageTitle = "How It Works - Platforma";
+const pageDescription = "Discover how Platforma connects nonprofits, donors, suppliers, and recipients to streamline humanitarian aid delivery across Ukraine.";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  </head>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #F8FAFC;
+}
+img {
+  outline: none;
+  border: none;
+}
+</style>
+
+<body style="font-family: 'Noto Sans', sans-serif; margin: 0; padding: 0; background-color: #F8FAFC; color: #0F172A;"></body>
+  <body style="font-family: 'Noto Sans', sans-serif; margin: 0; padding: 0; background-color: #F8FAFC; color: #0F172A;">
+    
+    <!-- Navigation Header -->
+    <nav style="background-color: white; padding: 0; position: fixed; top: 0; left: 0; right: 0; z-index: 50; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; height: 138px;">
+        
+        <!-- Logo -->
+        <div>
+          <img src="/images/plfm_logo_header.png" alt="Platforma" style="height: 72px; width: auto;">
+        </div>
+        
+       <!-- Center navigation buttons -->
+<div style="display: flex; align-items: center; gap: 2rem; flex: 1; justify-content: center; margin: 0 2rem;">
+  
+  <!-- HOME BUTTON -->
+  <a href="/" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Home</a>
+  
+  <!-- ABOUT BUTTON -->
+  <a href="/about" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">About</a>
+  
+  <!-- TEAM BUTTON -->
+  <a href="/team" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Team</a>
+  
+  <!-- HOW IT WORKS BUTTON - ACTIVE -->
+  <a href="/how-it-works" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(to top, #F6762B 12%, #F79A1E 24%, #F9B813 37%, #FACF0A 50%, #FBE004 64%, #FBE901 80%, #FCED00 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 120px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">How It Works</a>
+  
+  <!-- BLOG BUTTON -->
+  <a href="/blog" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Blog</a>
+  
+</div>
+        
+        <!-- Right side: Sign In button and language selector -->
+        <div style="display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 0.5rem; margin-right: 64px; height: 138px; position: relative;">
+          
+          <!-- SIGN IN BUTTON - positioned at same level as other nav buttons -->
+          <button style="background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; padding: 0.5rem 1.5rem; border-radius: 0.25rem; border: none; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all 0.2s ease; min-width: 100px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1); position: absolute; top: 49px; right: 0; white-space: nowrap;">Sign In</button>
+          
+          <!-- Language selector below Sign In -->
+          <div style="position: absolute; bottom: 10px; right: 0;">
+            <select style="background: white; color: #334155; padding: 0.2rem 1.2rem 0.2rem 0.4rem; border-radius: 1rem; border: 1px solid #e5e7eb; font-size: 0.6rem; cursor: pointer; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); appearance: none;">
+              <option value="en">🇬🇧 EN</option>
+              <option value="uk">🇺🇦 UK</option>
+              <option value="ru">🇷🇺 RU</option>
+              <option value="fr">🇫🇷 FR</option>
+              <option value="de">🇩🇪 DE</option>
+              <option value="pl">🇵🇱 PL</option>
+            </select>
+            <div style="position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: #334155; font-size: 0.5rem;">▼</div>
+          </div>
+          
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section style="padding: 220px 0 80px; background-color: #F8FAFC; text-align: center;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+        <h1 style="font-size: 48px; font-weight: 700; color: #0F172A; margin-bottom: 1rem; line-height: 1.2;">
+          How Platforma Works
+        </h1>
+        <p style="font-size: 18px; color: #64748B; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6;">
+          Our comprehensive platform connects all stakeholders in the humanitarian aid ecosystem, 
+          creating transparency, efficiency, and direct impact for communities across Ukraine.
+        </p>
+      </div>
+    </section>
+
+    <!-- Six Core Capabilities Section -->
+    <section style="padding: 80px 0; background-color: white;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+        <h2 style="font-size: 36px; font-weight: 700; color: #0F172A; text-align: center; margin-bottom: 3rem;">
+          Six Core Capabilities
+        </h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+          
+          <div style="background: #F8FAFC; border-radius: 1rem; padding: 2rem; text-align: center; border: 1px solid #E2E8F0;">
+            <div style="font-size: 48px; margin-bottom: 1rem;">🎯</div>
+            <h3 style="font-size: 20px; font-weight: 600; color: #0F172A; margin-bottom: 1rem;">Smart Matching</h3>
+            <p style="color: #64748B; line-height: 1.6;">AI-powered algorithm connects specific needs with available resources in real-time</p>
+          </div>
+          
+          <div style="background: #F8FAFC; border-radius: 1rem; padding: 2rem; text-align: center; border: 1px solid #E2E8F0;">
+            <div style="font-size: 48px; margin-bottom: 1rem;">📊</div>
+            <h3 style="font-size: 20px; font-weight: 600; color: #0F172A; margin-bottom: 1rem;">Real-Time Tracking</h3>
+            <p style="color: #64748B; line-height: 1.6;">Complete visibility from donation to delivery with photo confirmations</p>
+          </div>
+          
+          <div style="background: #F8FAFC; border-radius: 1rem; padding: 2rem; text-align: center; border: 1px solid #E2E8F0;">
+            <div style="font-size: 48px; margin-bottom: 1rem;">🤝</div>
+            <h3 style="font-size: 20px; font-weight: 600; color: #0F172A; margin-bottom: 1rem;">Multi-Stakeholder Coordination</h3>
+            <p style="color: #64748B; line-height: 1.6;">Seamlessly connects nonprofits, donors, suppliers, and recipients</p>
+          </div>
+          
+          <div style="background: #F8FAFC; border-radius: 1rem; padding: 2rem; text-align: center; border: 1px solid #E2E8F0;">
+            <div style="font-size: 48px; margin-bottom: 1rem;">🔍</div>
+            <h3 style="font-size: 20px; font-weight: 600; color: #0F172A; margin-bottom: 1rem;">Transparency Engine</h3>
+            <p style="color: #64748B; line-height: 1.6;">Blockchain-verified transactions and public impact dashboards</p>
+          </div>
+          
+          <div style="background: #F8FAFC; border-radius: 1rem; padding: 2rem; text-align: center; border: 1px solid #E2E8F0;">
+            <div style="font-size: 48px; margin-bottom: 1rem;">⚡</div>
+            <h3 style="font-size: 20px; font-weight: 600; color: #0F172A; margin-bottom: 1rem;">Emergency Response</h3>
+            <p style="color: #64748B; line-height: 1.6;">Rapid deployment protocols for crisis situations and urgent needs</p>
+          </div>
+          
+          <div style="background: #F8FAFC; border-radius: 1rem; padding: 2rem; text-align: center; border: 1px solid #E2E8F0;">
+            <div style="font-size: 48px; margin-bottom: 1rem;">📈</div>
+            <h3 style="font-size: 20px; font-weight: 600; color: #0F172A; margin-bottom: 1rem;">Impact Analytics</h3>
+            <p style="color: #64748B; line-height: 1.6;">Comprehensive metrics and reporting for continuous optimization</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- User Workflows Section -->
+    <section style="padding: 80px 0; background-color: #F8FAFC;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+        <h2 style="font-size: 36px; font-weight: 700; color: #0F172A; text-align: center; margin-bottom: 3rem;">
+          How Each User Type Benefits
+        </h2>
+        
+        <!-- Nonprofits Workflow -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem;">
+          <div>
+            <h3 style="font-size: 28px; font-weight: 600; color: #0F172A; margin-bottom: 1rem;">
+              🏢 For Nonprofits
+            </h3>
+            <p style="font-size: 18px; color: #64748B; margin-bottom: 2rem; line-height: 1.6;">
+              Streamline operations, reduce administrative overhead, and maximize impact through intelligent resource coordination.
+            </p>
+            <ul style="color: #64748B; line-height: 1.8; font-size: 16px; padding-left: 1rem;">
+              <li>Automated matching with verified suppliers and donors</li>
+              <li>Real-time inventory management and tracking</li>
+              <li>Simplified reporting with auto-generated impact metrics</li>
+              <li>Direct recipient feedback and verification system</li>
+            </ul>
+          </div>
+          <div style="background: white; border-radius: 1rem; padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid #E2E8F0;">
+            <div style="color: #94A3B8; font-size: 16px;">
+              📱 Nonprofit Dashboard Screenshot<br/>
+              <span style="font-size: 14px;">(Resource Management Interface)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recipients Workflow -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem;">
+          <div style="background: white; border-radius: 1rem; padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid #E2E8F0;">
+            <div style="color: #94A3B8; font-size: 16px;">
+              📱 Recipient Mobile App Screenshot<br/>
+              <span style="font-size: 14px;">(Request Submission Interface)</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="font-size: 28px; font-weight: 600; color: #0F172A; margin-bottom: 1rem;">
+              🙋‍♀️ For Recipients
+            </h3>
+            <p style="font-size: 18px; color: #64748B; margin-bottom: 2rem; line-height: 1.6;">
+              Access aid with dignity through a user-friendly system that respects privacy while ensuring fair distribution.
+            </p>
+            <ul style="color: #64748B; line-height: 1.8; font-size: 16px; padding-left: 1rem;">
+              <li>Simple mobile-first request submission</li>
+              <li>Real-time status updates on aid distribution</li>
+              <li>Privacy-protected verification process</li>
+              <li>Multi-language support for accessibility</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Donors Workflow -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem;">
+          <div>
+            <h3 style="font-size: 28px; font-weight: 600; color: #0F172A; margin-bottom: 1rem;">
+              💝 For Donors
+            </h3>
+            <p style="font-size: 18px; color: #64748B; margin-bottom: 2rem; line-height: 1.6;">
+              See exactly where your contributions go and the specific impact they create in Ukrainian communities.
+            </p>
+            <ul style="color: #64748B; line-height: 1.8; font-size: 16px; padding-left: 1rem;">
+              <li>Track donations from contribution to delivery</li>
+              <li>Receive photo confirmations and recipient feedback</li>
+              <li>Choose specific causes or allow smart allocation</li>
+              <li>Tax-ready receipts and impact reports</li>
+            </ul>
+          </div>
+          <div style="background: white; border-radius: 1rem; padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid #E2E8F0;">
+            <div style="color: #94A3B8; font-size: 16px;">
+              📱 Donor Impact Dashboard Screenshot<br/>
+              <span style="font-size: 14px;">(Real-time Tracking Interface)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suppliers Workflow -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem;">
+          <div style="background: white; border-radius: 1rem; padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid #E2E8F0;">
+            <div style="color: #94A3B8; font-size: 16px;">
+              📱 Supplier Portal Screenshot<br/>
+              <span style="font-size: 14px;">(Order Management System)</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="font-size: 28px; font-weight: 600; color: #0F172A; margin-bottom: 1rem;">
+              🚛 For Suppliers
+            </h3>
+            <p style="font-size: 18px; color: #64748B; margin-bottom: 2rem; line-height: 1.6;">
+              Connect with verified organizations and contribute to humanitarian efforts while building sustainable partnerships.
+            </p>
+            <ul style="color: #64748B; line-height: 1.8; font-size: 16px; padding-left: 1rem;">
+              <li>Access to verified, high-impact organizations</li>
+              <li>Streamlined procurement and delivery coordination</li>
+              <li>Transparent pricing and ethical sourcing verification</li>
+              <li>Performance metrics and community impact visibility</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Process Flow Section -->
+    <section style="padding: 80px 0; background-color: white;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+        <h2 style="font-size: 36px; font-weight: 700; color: #0F172A; text-align: center; margin-bottom: 3rem;">
+          The Complete Journey
+        </h2>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin: 3rem 0; position: relative;">
+          
+          <!-- Step 1 -->
+          <div style="text-align: center; flex: 1; position: relative;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #131B27 0%, #223046 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; margin: 0 auto 1rem;">1</div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #0F172A; margin-bottom: 0.5rem;">Need Identification</h4>
+            <p style="color: #64748B; font-size: 14px; max-width: 150px; margin: 0 auto;">Recipients submit requests through verified channels</p>
+            
+            <!-- Connector Line -->
+            <div style="position: absolute; top: 30px; right: -50%; width: 100%; height: 2px; background: #E2E8F0; z-index: -1;"></div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div style="text-align: center; flex: 1; position: relative;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #131B27 0%, #223046 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; margin: 0 auto 1rem;">2</div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #0F172A; margin-bottom: 0.5rem;">Smart Matching</h4>
+            <p style="color: #64748B; font-size: 14px; max-width: 150px; margin: 0 auto;">AI connects needs with available resources and donors</p>
+            
+            <!-- Connector Line -->
+            <div style="position: absolute; top: 30px; right: -50%; width: 100%; height: 2px; background: #E2E8F0; z-index: -1;"></div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div style="text-align: center; flex: 1; position: relative;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #131B27 0%, #223046 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; margin: 0 auto 1rem;">3</div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #0F172A; margin-bottom: 0.5rem;">Resource Coordination</h4>
+            <p style="color: #64748B; font-size: 14px; max-width: 150px; margin: 0 auto;">Nonprofits coordinate with suppliers for procurement</p>
+            
+            <!-- Connector Line -->
+            <div style="position: absolute; top: 30px; right: -50%; width: 100%; height: 2px; background: #E2E8F0; z-index: -1;"></div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div style="text-align: center; flex: 1; position: relative;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #131B27 0%, #223046 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; margin: 0 auto 1rem;">4</div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #0F172A; margin-bottom: 0.5rem;">Transparent Delivery</h4>
+            <p style="color: #64748B; font-size: 14px; max-width: 150px; margin: 0 auto;">Real-time tracking with photo confirmation</p>
+            
+            <!-- Connector Line -->
+            <div style="position: absolute; top: 30px; right: -50%; width: 100%; height: 2px; background: #E2E8F0; z-index: -1;"></div>
+          </div>
+          
+          <!-- Step 5 -->
+          <div style="text-align: center; flex: 1; position: relative;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(to top, #F6762B 12%, #FCED00 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; margin: 0 auto 1rem;">5</div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #0F172A; margin-bottom: 0.5rem;">Impact Measurement</h4>
+            <p style="color: #64748B; font-size: 14px; max-width: 150px; margin: 0 auto;">Comprehensive reporting and feedback collection</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #131B27 0%, #223046 100%);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem; text-align: center;">
+        <h2 style="font-size: 36px; font-weight: 700; color: white; margin-bottom: 1rem;">
+          Ready to Make a Difference?
+        </h2>
+        <p style="font-size: 18px; color: #CBD5E1; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Join thousands of users who are already streamlining humanitarian aid across Ukraine. 
+          Every connection creates impact.
+        </p>
+        
+        <div style="display: flex; gap: 2rem; justify-content: center; align-items: center;">
+          <button style="background: linear-gradient(to top, #F6762B 12%, #F79A1E 24%, #F9B813 37%, #FACF0A 50%, #FBE004 64%, #FBE901 80%, #FCED00 100%); color: white; padding: 1rem 2rem; border-radius: 1rem; border: none; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+            Visit the App
+          </button>
+          
+          <button style="background: transparent; color: white; padding: 1rem 2rem; border-radius: 1rem; border: 2px solid white; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer style="padding: 3rem 0; background-color: white; border-top: 1px solid #E5E7EB;">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+      
+      <!-- Company Info -->
+      <div>
+        <img src="/images/plfm_logo_header.png" alt="Platforma Logo" style="height: 40px; width: auto; margin-bottom: 1rem;">
+        <p style="color: #6B7280; margin: 0 0 1rem 0; line-height: 1.6;">
+          Streamlining humanitarian aid delivery across Ukraine through transparent coordination and efficient logistics.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://twitter.com/platforma" target="_blank" style="
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            <img src="/x.svg" alt="X" style="width: 24px; height: 24px;">
+          </a>
+          
+          <a href="https://instagram.com/platforma" target="_blank" style="
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            <img src="/instagram.svg" alt="Instagram" style="width: 24px; height: 24px;">
+          </a>
+          
+          <a href="https://facebook.com/platforma" target="_blank" style="
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            <img src="/Group (4).svg" alt="Facebook" style="width: 24px; height: 24px;">
+          </a>
+          
+          <a href="https://linkedin.com/company/platforma" target="_blank" style="
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px;">
+          </a>
+          
+          <a href="https://threads.net/@platforma" target="_blank" style="
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            <img src="/threads.svg" alt="Threads" style="width: 24px; height: 24px;">
+          </a>
+          
+          <a href="https://bsky.app/profile/platforma" target="_blank" style="
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            <img src="/bluesky.svg" alt="Bluesky" style="width: 24px; height: 24px;">
+          </a>
+          
+          <a href="https://tiktok.com/@platforma" target="_blank" style="
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            <img src="/tiktok.svg" alt="TikTok" style="width: 24px; height: 24px;">
+          </a>
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Platform</h3>
+        <ul style="list-style: none; margin: 0; padding: 0;">
+          <li style="margin-bottom: 0.5rem;"><a href="/how-it-works" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">How It Works</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/nonprofits" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Nonprofits</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/donors" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Donors</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/suppliers" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Suppliers</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/recipients" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Recipients</a></li>
+        </ul>
+      </div>
+      
+      <!-- Company -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Company</h3>
+        <ul style="list-style: none; margin: 0; padding: 0;">
+          <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">About</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/team" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease; font-weight: 600;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Team</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/blog" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Blog</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Support -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Support</h3>
+        <ul style="list-style: none; margin: 0; padding: 0;">
+          <li style="margin-bottom: 0.5rem;"><a href="/help" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Help Center</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/privacy" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/terms" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Terms of Service</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/security" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Copyright -->
+    <div style="border-top: 1px solid #E5E7EB; padding-top: 2rem; text-align: center;">
+      <p style="color: #94A3B8; margin: 0; font-size: 0.875rem;">
+        © 2025 Platforma. All rights reserved. Built with determination to transform humanitarian aid.
+      </p>
+    </div>
+  </div>
+</footer>
