@@ -1,139 +1,389 @@
 ---
-// Platforma App - Team Page
 const pageTitle = "Team - Platforma";
-const pageDescription = "Meet the international team behind Platforma, combining Ukrainian humanitarian workers, tech specialists, and medical supply chain experts.";
+const pageDescription = "Meet the dedicated professionals working to revolutionize humanitarian aid delivery across Ukraine";
 ---
 
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  line-height: 1.6;
-  color: #1f2937;
-  background-color: #F8FAFC;
-}
-img {
-  outline: none;
-  border: none;
-}
-
-/* Modal styles */
-.team-card {
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  background-color: white;
-  margin: 5% auto;
-  padding: 2rem;
-  border-radius: 1rem;
-  width: 90%;
-  max-width: 600px;
-  position: relative;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-.close {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: #64748B;
-}
-
-.close:hover {
-  color: #0F172A;
-}
-</style>
-
-<script>
-function openModal(memberName) {
-  document.getElementById('modal-' + memberName).style.display = 'block';
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal(memberName) {
-  document.getElementById('modal-' + memberName).style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
-
-window.onclick = function(event) {
-  if (event.target.classList.contains('modal')) {
-    event.target.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-}
-</script>
-
-<body style="font-family: 'Noto Sans', sans-serif; margin: 0; padding: 0; background-color: #F8FAFC; color: #0F172A;">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
+    <style>
+    /* Universal reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background-color: #f8fafc;
+    }
+
+    img {
+      outline: none;
+      border: none;
+    }
+
+    /* Responsive Navigation System */
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 138px;
+    }
+
+    .nav-logo img {
+      height: 72px;
+      width: auto;
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex: 1;
+      justify-content: center;
+      margin: 0 1rem;
+    }
+
+    .nav-button {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      min-width: 70px;
+      height: 40px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
+    }
+
+    .nav-button.inactive {
+      background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%);
+    }
+
+    .nav-button.active {
+      color: #182231;
+      font-weight: 600;
+      background: linear-gradient(to right, #F79A1E 0%, #F9B813 25%, #FACF0A 40%, #FBE004 60%, #FBE901 80%, #FCED00 100%);
+      border: 1px solid #182231;
+    }
+
+    .nav-button.how-it-works {
+      min-width: 100px;
+    }
+
+    .nav-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-right: 64px;
+      height: 138px;
+      position: relative;
+    }
+
+    .sign-in-btn {
+      background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.25rem;
+      border: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 100px;
+      height: 40px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 49px;
+      right: 0;
+      white-space: nowrap;
+    }
+
+    .language-selector {
+      position: absolute;
+      bottom: 10px;
+      right: 0;
+    }
+
+    .language-select {
+      background: white;
+      color: #334155;
+      padding: 0.2rem 1.2rem 0.2rem 0.4rem;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      font-size: 0.6rem;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      appearance: none;
+    }
+
+    .language-arrow {
+      position: absolute;
+      right: 0.4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #334155;
+      font-size: 0.5rem;
+    }
+
+    /* Team Card Styles */
+    .team-card {
+      background: linear-gradient(to bottom, #f1f5f9 0%, #ffffff 100%);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      animation: modalSlideIn 0.3s ease-out;
+    }
+
+    @keyframes modalSlideIn {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .close {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: #6B7280;
+      transition: color 0.2s ease;
+    }
+
+    .close:hover {
+      color: #1F2937;
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      display: none;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1200px) {
+      .nav-center {
+        gap: 1rem;
+        margin: 0 0.5rem;
+      }
+      
+      .nav-button {
+        padding: 0.5rem 0.75rem;
+        min-width: 60px;
+        font-size: 0.8rem;
+      }
+      
+      .nav-button.how-it-works {
+        min-width: 80px;
+      }
+      
+      .nav-right {
+        margin-right: 32px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-center {
+        gap: 0.75rem;
+      }
+      
+      .nav-button {
+        padding: 0.4rem 0.6rem;
+        min-width: 50px;
+        font-size: 0.75rem;
+        height: 36px;
+      }
+      
+      .nav-button.how-it-works {
+        min-width: 70px;
+      }
+      
+      .sign-in-btn {
+        min-width: 80px;
+        height: 36px;
+        font-size: 0.75rem;
+        top: 51px;
+      }
+      
+      .nav-right {
+        margin-right: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        height: 100px;
+        padding: 0 0.5rem;
+      }
+      
+      .nav-center {
+        display: none;
+      }
+      
+      .mobile-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 0.75rem 0.5rem;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        justify-content: space-around;
+        align-items: center;
+      }
+      
+      .mobile-nav .nav-button {
+        flex-direction: column;
+        padding: 0.5rem 0.25rem;
+        min-width: 50px;
+        height: 50px;
+        font-size: 0.7rem;
+        gap: 0.25rem;
+      }
+      
+      .nav-right {
+        height: 100px;
+        margin-right: 8px;
+      }
+      
+      .sign-in-btn {
+        top: 30px;
+        height: 32px;
+        min-width: 70px;
+        font-size: 0.7rem;
+      }
+      
+      .language-selector {
+        bottom: 5px;
+      }
+      
+      body {
+        padding-bottom: 80px;
+      }
+      
+      .modal-content {
+        margin: 10% auto;
+        width: 95%;
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-container {
+        height: 80px;
+      }
+      
+      .nav-logo img {
+        height: 50px;
+      }
+      
+      .nav-right {
+        height: 80px;
+        margin-right: 4px;
+      }
+      
+      .sign-in-btn {
+        top: 24px;
+        height: 28px;
+        min-width: 60px;
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
+      }
+      
+      .mobile-nav .nav-button {
+        min-width: 45px;
+        height: 45px;
+        font-size: 0.65rem;
+      }
+    }
+    </style>
+</head>
+
+<body>
     <!-- Navigation Header -->
     <nav style="background-color: white; padding: 0; position: fixed; top: 0; left: 0; right: 0; z-index: 50; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; height: 138px;">
-        
-        <!-- Logo -->
-        <div>
-          <img src="/images/plfm_logo_header.png" alt="Platforma" style="height: 72px; width: auto;">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="/images/plfm_logo_header.png" alt="Platforma">
         </div>
         
-        <!-- Center navigation buttons -->
-        <div style="display: flex; align-items: center; gap: 2rem; flex: 1; justify-content: center; margin: 0 2rem;">
-          <a href="/" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Home</a>
-          
-          <a href="/about" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">About</a>
-          
-          <a href="/team" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(to top, #F6762B 12%, #F79A1E 24%, #F9B813 37%, #FACF0A 50%, #FBE004 64%, #FBE901 80%, #FCED00 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Team</a>
-          
-          <a href="/how-it-works" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 120px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">How It Works</a>
-          
-          <a href="/blog" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Blog</a>
+        <div class="nav-center">
+          <a href="/" class="nav-button inactive">Home</a>
+          <a href="/about" class="nav-button inactive">About</a>
+          <a href="/team" class="nav-button active">Team</a>
+          <a href="/how-it-works" class="nav-button inactive how-it-works">How It Works</a>
+          <a href="/blog" class="nav-button inactive">Blog</a>
         </div>
         
-        <!-- Right side: Sign In button and language selector -->
-        <div style="display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 0.5rem; margin-right: 64px; height: 138px; position: relative;">
-          
-          <!-- SIGN IN BUTTON -->
-          <button style="background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; padding: 0.5rem 1.5rem; border-radius: 0.25rem; border: none; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all 0.2s ease; min-width: 100px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1); position: absolute; top: 49px; right: 0; white-space: nowrap;">Sign In</button>
-          
-          <!-- Language selector -->
-          <div style="position: absolute; bottom: 10px; right: 0;">
-            <select style="background: white; color: #334155; padding: 0.2rem 1.2rem 0.2rem 0.4rem; border-radius: 1rem; border: 1px solid #e5e7eb; font-size: 0.6rem; cursor: pointer; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); appearance: none;">
+        <div class="nav-right">
+          <button class="sign-in-btn">Sign In</button>
+          <div class="language-selector">
+            <select class="language-select">
               <option value="en">🇬🇧 EN</option>
               <option value="uk">🇺🇦 UK</option>
               <option value="ru">🇷🇺 RU</option>
@@ -141,388 +391,491 @@ window.onclick = function(event) {
               <option value="de">🇩🇪 DE</option>
               <option value="pl">🇵🇱 PL</option>
             </select>
-            <div style="position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: #334155; font-size: 0.5rem;">▼</div>
+            <div class="language-arrow">▼</div>
           </div>
-          
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section style="padding: 200px 0 5rem 0; background-color: #F8FAFC;">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h1 style="font-size: 3rem; font-weight: 700; color: #1F2937; line-height: 1.2; margin: 0 0 1.5rem 0; max-width: 800px; margin-left: auto; margin-right: auto;">
-            The Team Behind the Mission
-          </h1>
-          <p style="font-size: 1.25rem; color: #6B7280; max-width: 700px; margin: 0 auto;">
-            Our international team combines Ukrainian humanitarian workers who've experienced the coordination crisis firsthand, American and European tech specialists, and medical supply chain experts.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Team Introduction Section -->
-    <section style="padding: 5rem 0; background-color: white;">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-        <div style="text-align: center; margin-bottom: 4rem;">
-          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
-            Built by Humanitarian Workers, for Humanitarian Workers
-          </h2>
-          <p style="font-size: 1.125rem; color: #6B7280; max-width: 800px; margin: 0 auto;">
-            This blend of ground-level humanitarian experience and technical expertise ensures we're building a solution that works in the real world, not just in theory.
-          </p>
-        </div>
-        
-        <!-- Team Grid -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem;">
-          
-          <!-- Alexis - CEO - CLICKABLE -->
-          <div class="team-card" onclick="openModal('alexis')" style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center; border: 2px solid #F3E8FF;">
-            <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #8B5CF6, #A855F7); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);">
-              <span style="font-size: 3rem; color: white;">👨‍💼</span>
-            </div>
-            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Alexis</h3>
-            <p style="font-size: 1rem; font-weight: 600; color: #8B5CF6; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">CEO & Founder</p>
-            <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
-              Founded Platforma after experiencing the coordination crisis firsthand while delivering medical supplies in Kyiv.
-            </p>
-            <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
-              <span style="background: #F3E8FF; color: #8B5CF6; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Humanitarian Aid</span>
-              <span style="background: #F3E8FF; color: #8B5CF6; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Leadership</span>
-            </div>
-            <div style="font-size: 12px; opacity: 0.7; color: #8B5CF6;">Click to learn more</div>
-          </div>
-          
-          <!-- Yulia - COO -->
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center; border: 2px solid #DBEAFE;">
-            <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #3B82F6, #2563EB); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);">
-              <span style="font-size: 3rem; color: white;">👩‍💼</span>
-            </div>
-            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Yulia</h3>
-            <p style="font-size: 1rem; font-weight: 600; color: #3B82F6; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">COO</p>
-            <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
-              Operational excellence leader with extensive experience in scaling humanitarian organizations. Ensures efficient processes and sustainable growth across all platform operations.
-            </p>
-            <div style="display: flex; gap: 0.5rem; justify-content: center;">
-              <span style="background: #DBEAFE; color: #3B82F6; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Operations</span>
-              <span style="background: #DBEAFE; color: #3B82F6; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Strategy</span>
-            </div>
-          </div>
-          
-          <!-- Maryna - Senior Dev -->
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center; border: 2px solid #e8f5e8;">
-            <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #10B981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);">
-              <span style="font-size: 3rem; color: white;">👩‍💻</span>
-            </div>
-            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Maryna</h3>
-            <p style="font-size: 1rem; font-weight: 600; color: #10B981; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Senior Developer</p>
-            <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
-              Lead technical architect building the platform's core infrastructure. Expert in scalable systems design with deep understanding of humanitarian workflow requirements.
-            </p>
-            <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
-              <span style="background: #e8f5e8; color: #10B981; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Full-Stack</span>
-              <span style="background: #e8f5e8; color: #10B981; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Architecture</span>
-            </div>
-          </div>
-          
-          <!-- William - Product Owner -->
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center; border: 2px solid #FED7AA;">
-            <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #F59E0B, #D97706); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);">
-              <span style="font-size: 3rem; color: white;">👨‍🎯</span>
-            </div>
-            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">William</h3>
-            <p style="font-size: 1rem; font-weight: 600; color: #F59E0B; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Product Owner</p>
-            <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
-              Bridges user needs with technical solutions, ensuring the platform serves real humanitarian workflows. Specializes in user experience design for crisis response applications.
-            </p>
-            <div style="display: flex; gap: 0.5rem; justify-content: center;">
-              <span style="background: #FED7AA; color: #F59E0B; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Product</span>
-              <span style="background: #FED7AA; color: #F59E0B; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">UX Design</span>
-            </div>
-          </div>
-          
-          <!-- Michael - Advisor -->
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center; border: 2px solid #E5E7EB;">
-            <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #6B7280, #4B5563); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(107, 114, 128, 0.3);">
-              <span style="font-size: 3rem; color: white;">👨‍🏫</span>
-            </div>
-            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Michael</h3>
-            <p style="font-size: 1rem; font-weight: 600; color: #6B7280; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Strategic Advisor</p>
-            <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
-              Provides strategic guidance on scaling humanitarian technology solutions. Brings decades of experience in nonprofit management and international development programs.
-            </p>
-            <div style="display: flex; gap: 0.5rem; justify-content: center;">
-              <span style="background: #F3F4F6; color: #6B7280; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Strategy</span>
-              <span style="background: #F3F4F6; color: #6B7280; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Nonprofit</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modal for Alexis -->
-    <div id="modal-alexis" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('alexis')">&times;</span>
-        <div style="text-align: center; margin-bottom: 2rem;">
-          <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #8B5CF6, #A855F7); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white;">👨‍💼</div>
-          <h2 style="color: #0F172A; margin-bottom: 0.5rem;">Alexis</h2>
-          <p style="color: #8B5CF6; font-weight: 600; margin-bottom: 1rem;">CEO & Founder</p>
-        </div>
-        
-        <div style="color: #64748B; line-height: 1.6;">
-          <h3 style="color: #0F172A; margin-bottom: 1rem;">Background</h3>
-          <p style="margin-bottom: 1rem;">Alexis founded Platforma after spending months on the frontlines delivering medical supplies across Ukraine. His firsthand experience revealed the critical coordination gaps in humanitarian logistics that cost lives and waste resources.</p>
-          
-          <h3 style="color: #0F172A; margin-bottom: 1rem;">Experience</h3>
-          <ul style="margin-bottom: 1rem; padding-left: 1rem;">
-            <li>5+ years in international development and humanitarian aid</li>
-            <li>Former medical supply chain coordinator in Ukraine</li>
-            <li>Bilingual (English/Ukrainian) with field experience</li>
-            <li>MBA in Social Impact and Sustainable Development</li>
-            <li>Led emergency response teams during crisis situations</li>
-          </ul>
-          
-          <h3 style="color: #0F172A; margin-bottom: 1rem;">Vision</h3>
-          <p>"Technology should serve humanity's most urgent needs. Platforma transforms how we deliver aid by eliminating inefficiencies and creating complete transparency in every transaction."</p>
-        </div>
-      </div>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <a href="/" class="nav-button inactive">Home</a>
+      <a href="/about" class="nav-button inactive">About</a>
+      <a href="/team" class="nav-button active">Team</a>
+      <a href="/how-it-works" class="nav-button inactive">How It Works</a>
+      <a href="/blog" class="nav-button inactive">Blog</a>
     </div>
 
+    <!-- Main Content -->
+    <main style="margin-top: 160px; padding: 4rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h1 style="font-size: 3rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem;">Our Team</h1>
+                <p style="font-size: 1.25rem; color: #6b7280; max-width: 600px; margin: 0 auto;">
+                    Meet the dedicated professionals working to revolutionize humanitarian aid delivery across Ukraine
+                </p>
+            </div>
 
-<!-- Team Values Section -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                <!-- Alexis Eliot - CEO -->
+            <div class="team-card" onclick="openModal('alexis')">
+    <div style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3); overflow: hidden;">
+        <img src="/images/platforma_logo_icon_circle_new_version_may25 copy.png" alt="Alexis Eliot" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Alexis Eliot</h3>
+                    <p style="font-size: 1rem; font-weight: 600; color: #8B5CF6; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">CEO & Founder</p>
+                    <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
+                        Founded Platforma after experiencing the coordination crisis firsthand while delivering medical supplies in Kyiv.
+                    </p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                        <span style="background: #F3E8FF; color: #8B5CF6; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Humanitarian Aid</span>
+                        <span style="background: #F3E8FF; color: #8B5CF6; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Leadership</span>
+                    </div>
+                    <div style="font-size: 12px; opacity: 0.7; color: #8B5CF6;">Click to learn more</div>
+                </div>
+
+                <!-- Yulia M - COO -->
+                <div class="team-card" onclick="openModal('yulia')">
+                    <div style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3); overflow: hidden;">
+    <img src="/images/platforma_logo_icon_circle_new_version_may25 copy.png" alt="Yulia" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Yulia M</h3>
+                    <p style="font-size: 1rem; font-weight: 600; color: #3B82F6; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">COO</p>
+                    <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
+                        Operational excellence leader with extensive experience in scaling humanitarian organizations.
+                    </p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                        <span style="background: #DBEAFE; color: #3B82F6; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Operations</span>
+                        <span style="background: #DBEAFE; color: #3B82F6; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Strategy</span>
+                    </div>
+                    <div style="font-size: 12px; opacity: 0.7; color: #3B82F6;">Click to learn more</div>
+                </div>
+
+                <!-- Polina Z - CMO -->
+                <div class="team-card" onclick="openModal('polina')">
+                    <div style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3); overflow: hidden;">
+    <img src="/images/platforma_logo_icon_circle_new_version_may25 copy.png" alt="Polina" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Polina Z</h3>
+                    <p style="font-size: 1rem; font-weight: 600; color: #EC4899; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">CMO</p>
+                    <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
+                        Marketing strategist driving global awareness and adoption of Platforma.
+                    </p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                        <span style="background: #FCE7F3; color: #EC4899; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Marketing</span>
+                        <span style="background: #FCE7F3; color: #EC4899; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Communications</span>
+                    </div>
+                    <div style="font-size: 12px; opacity: 0.7; color: #EC4899;">Click to learn more</div>
+                </div>
+
+                <!-- Maryna B - Senior Developer -->
+                <div class="team-card" onclick="openModal('maryna')">
+                    <div style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3); overflow: hidden;">
+    <img src="/images/platforma_logo_icon_circle_new_version_may25 copy.png" alt="Maryna" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Maryna B</h3>
+                    <p style="font-size: 1rem; font-weight: 600; color: #10B981; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Senior Developer</p>
+                    <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
+                        Lead technical architect building the platform's core infrastructure.
+                    </p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <span style="background: #DCFCE7; color: #10B981; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Full-Stack</span>
+                        <span style="background: #DCFCE7; color: #10B981; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Architecture</span>
+                    </div>
+                    <div style="font-size: 12px; opacity: 0.7; color: #10B981;">Click to learn more</div>
+                </div>
+
+                <!-- William Doré - Product Owner -->
+                <div class="team-card" onclick="openModal('william')">
+                   <div style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3); overflow: hidden;">
+    <img src="/images/platforma_logo_icon_circle_new_version_may25 copy.png" alt="William" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">William Doré</h3>
+                    <p style="font-size: 1rem; font-weight: 600; color: #F59E0B; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Product Owner</p>
+                    <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
+                        Bridges user needs with technical solutions for humanitarian workflows.
+                    </p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                        <span style="background: #FED7AA; color: #F59E0B; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Product</span>
+                        <span style="background: #FED7AA; color: #F59E0B; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">UX Design</span>
+                    </div>
+                    <div style="font-size: 12px; opacity: 0.7; color: #F59E0B;">Click to learn more</div>
+                </div>
+
+                <!-- Michael - Strategic Advisor -->
+                <div class="team-card" onclick="openModal('michael')">
+                  <div style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem auto; box-shadow: 0 8px 20px rgba(107, 114, 128, 0.3); overflow: hidden;">
+    <img src="/images/platforma_logo_icon_circle_new_version_may25 copy.png" alt="Michael" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Michael S</h3>
+                    <p style="font-size: 1rem; font-weight: 600; color: #6B7280; margin: 0 0 1rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Strategic Advisor</p>
+                    <p style="color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.6;">
+                        Provides strategic guidance on scaling humanitarian technology solutions.
+                    </p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                        <span style="background: #F3F4F6; color: #6B7280; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Strategy</span>
+                        <span style="background: #F3F4F6; color: #6B7280; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Nonprofit</span>
+                    </div>
+                    <div style="font-size: 12px; opacity: 0.7; color: #6B7280;">Click to learn more</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Team Values Section -->
     <section style="padding: 5rem 0; background-color: #F8FAFC;">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
-            Our Values Drive Our Mission
-          </h2>
-          <p style="font-size: 1.125rem; color: #6B7280; max-width: 700px; margin: 0 auto;">
-            Every decision we make is guided by our commitment to transparency, efficiency, and real-world impact.
-          </p>
+        <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
+                    Our Values Drive Our Mission
+                </h2>
+                <p style="font-size: 1.125rem; color: #6B7280; max-width: 700px; margin: 0 auto;">
+                    Every decision we make is guided by our commitment to transparency, efficiency, and real-world impact.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div style="background: linear-gradient(to bottom, #f1f5f9 0%, #ffffff 100%); border-radius: 1rem; padding: 2rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); text-align: center; border: 1px solid #e2e8f0;">
+               <div style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1.5rem auto; overflow: hidden;">
+    <img src="/images/Real-World Focus  1321315242.png" alt="Real-World Focus" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+                    <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Real-World Focus</h3>
+                    <p style="color: #6B7280; margin: 0; line-height: 1.6;">
+                        Every feature solves a problem we've personally experienced in crisis conditions. No theoretical solutions—only practical tools that work.
+                    </p>
+                </div>
+
+                <div style="background: linear-gradient(to bottom, #f1f5f9 0%, #ffffff 100%); border-radius: 1rem; padding: 2rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); text-align: center; border: 1px solid #e2e8f0;">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1.5rem auto; overflow: hidden;">
+    <img src="/images/Complete Transparency  1321315241.png" alt="Complete Transparency" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+                    <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Complete Transparency</h3>
+                    <p style="color: #6B7280; margin: 0; line-height: 1.6;">
+                        Every dollar tracked, every decision explained, every impact measured. We build trust through radical transparency in all our operations.
+                    </p>
+                </div>
+
+                <div style="background: linear-gradient(to bottom, #f1f5f9 0%, #ffffff 100%); border-radius: 1rem; padding: 2rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); text-align: center; border: 1px solid #e2e8f0;">
+                   <div style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1.5rem auto; overflow: hidden;">
+    <img src="/images/Urgent Innovation  1321315240.png" alt="Urgent Innovation" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+                    <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Urgent Innovation</h3>
+                    <p style="color: #6B7280; margin: 0; line-height: 1.6;">
+                        Lives depend on efficient coordination. We move fast, iterate quickly, and deploy solutions that make an immediate difference.
+                    </p>
+                </div>
+            </div>
         </div>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
-            <div style="width: 80px; height: 80px; background: #F3E8FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
-              <span style="font-size: 2rem;">🎯</span>
-            </div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Real-World Focus</h3>
-            <p style="color: #6B7280; margin: 0; line-height: 1.6;">
-              Every feature solves a problem we've personally experienced in crisis conditions. No theoretical solutions—only practical tools that work.
-            </p>
-          </div>
-          
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
-            <div style="width: 80px; height: 80px; background: #DBEAFE; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
-              <span style="font-size: 2rem;">🔍</span>
-            </div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Complete Transparency</h3>
-            <p style="color: #6B7280; margin: 0; line-height: 1.6;">
-              Every dollar tracked, every decision explained, every impact measured. We build trust through radical transparency in all our operations.
-            </p>
-          </div>
-          
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
-            <div style="width: 80px; height: 80px; background: #e8f5e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
-              <span style="font-size: 2rem;">⚡</span>
-            </div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Urgent Innovation</h3>
-            <p style="color: #6B7280; margin: 0; line-height: 1.6;">
-              Lives depend on efficient coordination. We move fast, iterate quickly, and deploy solutions that make an immediate difference.
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Join Us Section -->
     <section style="padding: 5rem 0; background-color: white;">
-      <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem; text-align: center;">
-        <div style="background: #F8FAFC; border-radius: 1rem; padding: 4rem 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
-            Join Our Mission
-          </h2>
-          <p style="font-size: 1.125rem; color: #6B7280; max-width: 600px; margin: 0 auto 2rem auto;">
-            We're always looking for passionate individuals who want to transform humanitarian aid. Whether you're a developer, humanitarian worker, or domain expert—we want to hear from you.
-          </p>
-          
-          <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
-            <a href="/careers" style="
-              background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%);
-              color: white;
-              text-decoration: none;
-              padding: 0.75rem 2rem;
-              border-radius: 0.5rem;
-              font-weight: 600;
-              font-size: 1.125rem;
-              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
-              transition: all 0.3s ease;
-              display: inline-flex;
-              align-items: center;
-            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1)';">
-              View Open Positions
-            </a>
-            
-            <a href="/contact" style="
-              background: white;
-              color: #131B27;
-              text-decoration: none;
-              padding: 0.75rem 2rem;
-              border-radius: 0.5rem;
-              font-weight: 600;
-              font-size: 1.125rem;
-              border: 2px solid #131B27;
-              transition: all 0.3s ease;
-              display: inline-flex;
-              align-items: center;
-            " onmouseover="this.style.background='#131B27'; this.style.color='white';" onmouseout="this.style.background='white'; this.style.color='#131B27';">
-              Get In Touch
-            </a>
-          </div>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem; text-align: center;">
+            <div style="background: linear-gradient(to bottom, #f1f5f9 0%, #ffffff 100%); border-radius: 1rem; padding: 4rem 2rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
+                    Join Our Mission
+                </h2>
+                <p style="font-size: 1.125rem; color: #6B7280; max-width: 600px; margin: 0 auto 2rem auto;">
+                    We're always looking for passionate individuals who want to transform humanitarian aid. Whether you're a developer, humanitarian worker, or domain expert—we want to hear from you.
+                </p>
+                
+                <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <a href="/careers" style="background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; text-decoration: none; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 600; font-size: 1.125rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; display: inline-flex; align-items: center;">
+                        View Open Positions
+                    </a>
+                    
+                    <a href="/contact" style="background: white; color: #131B27; text-decoration: none; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 600; font-size: 1.125rem; border: 2px solid #131B27; transition: all 0.3s ease; display: inline-flex; align-items: center;">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-<!-- Footer -->
-<footer style="padding: 3rem 0; background-color: white; border-top: 1px solid #E5E7EB;">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-      
-      <!-- Company Info -->
-      <div>
-        <img src="/images/plfm_logo_header.png" alt="Platforma Logo" style="height: 40px; width: auto; margin-bottom: 1rem;">
-        <p style="color: #6B7280; margin: 0 0 1rem 0; line-height: 1.6;">
-          Streamlining humanitarian aid delivery across Ukraine through transparent coordination and efficient logistics.
-        </p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="https://twitter.com/platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/x.svg" alt="X" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://instagram.com/platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/instagram.svg" alt="Instagram" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://facebook.com/platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/Group (4).svg" alt="Facebook" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://linkedin.com/company/platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://threads.net/@platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/threads.svg" alt="Threads" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://bsky.app/profile/platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/bluesky.svg" alt="Bluesky" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://tiktok.com/@platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/tiktok.svg" alt="TikTok" style="width: 24px; height: 24px;">
-          </a>
+    <!-- Footer -->
+  <footer style="padding: 3rem 0; background-color: white; border-top: 1px solid #E5E7EB;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        
+       <!-- Company Info -->
+<div>
+  <img src="/images/plfm_logo_header.png" alt="Platforma Logo" style="height: 40px; width: auto; margin-bottom: 1rem;">
+  <p style="color: #6B7280; margin: 0 0 1rem 0; line-height: 1.6;">
+    Streamlining humanitarian aid delivery across Ukraine through transparent coordination and efficient logistics.
+  </p>
+  <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+    <a href="https://x.com/platforma_app" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/x.svg" alt="X" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.instagram.com/platforma.app/" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/instagram.svg" alt="Instagram" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.linkedin.com/company/platforma-app/?viewAsMember=true" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.threads.com/@platforma.app" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/threads.svg" alt="Threads" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://bsky.app/profile/platformaapp.com" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/bluesky.svg" alt="Bluesky" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.tiktok.com/@platforma_app" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/tiktok.svg" alt="TikTok" style="width: 24px; height: 24px;">
+    </a>
+  </div>
+</div>
+        
+        <!-- Platform Links -->
+        <div>
+          <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Platform</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/how-it-works" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">How It Works</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/nonprofits" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Nonprofits</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/donors" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Donors</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/suppliers" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Suppliers</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/recipients" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Recipients</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company Links -->
+        <div>
+          <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Company</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">About</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/team" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Team</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/blog" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Blog</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Support Links -->
+        <div>
+          <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Support</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/help" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Help Center</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/privacy" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/terms" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Terms of Service</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/security" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Security</a></li>
+          </ul>
         </div>
       </div>
       
-      <!-- Quick Links -->
-      <div>
-        <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Platform</h3>
-        <ul style="list-style: none; margin: 0; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="/how-it-works" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">How It Works</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/nonprofits" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Nonprofits</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/donors" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Donors</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/suppliers" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Suppliers</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/recipients" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Recipients</a></li>
-        </ul>
-      </div>
-      
-      <!-- Company -->
-      <div>
-        <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Company</h3>
-        <ul style="list-style: none; margin: 0; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">About</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/team" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease; font-weight: 600;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Team</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/blog" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Blog</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Support -->
-      <div>
-        <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Support</h3>
-        <ul style="list-style: none; margin: 0; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="/help" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Help Center</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/privacy" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/terms" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Terms of Service</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/security" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Security</a></li>
-        </ul>
+      <!-- Copyright -->
+      <div style="border-top: 1px solid #E5E7EB; padding-top: 2rem; text-align: center;">
+        <p style="color: #94A3B8; margin: 0; font-size: 0.875rem;">
+          © 2025 Platforma. All rights reserved. Built with determination to transform humanitarian aid.
+        </p>
       </div>
     </div>
-    
-    <!-- Copyright -->
-    <div style="border-top: 1px solid #E5E7EB; padding-top: 2rem; text-align: center;">
-      <p style="color: #94A3B8; margin: 0; font-size: 0.875rem;">
-        © 2025 Platforma. All rights reserved. Built with determination to transform humanitarian aid.
-      </p>
+  </footer>
+</body>
+</html>     
+
+    <!-- Team Member Modals -->
+ <div id="alexis" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('alexis')">&times;</span>
+        
+        <div style="width: 180px; height: 180px; margin: 24px auto 20px auto; border-radius: 50%; overflow: hidden; background: linear-gradient(135deg, #8B5CF6, #A78BFA);">
+            <img src="images/plfm_picture_pfp_profile_oct25 copy.png" 
+                 alt="Alexis profile picture" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        <h2 style="color: #1F2937; margin: 0 0 8px 0; font-size: 28px; font-weight: 700;">Alexis Eliot</h2>
+        <p style="color: #8B5CF6; margin: 0 0 24px 0; font-size: 18px; font-weight: 600;">CEO & Founder</p>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <p style="margin: 0; font-weight: 600;"><strong>The Story Behind Platforma</strong></p>
+            <div style="display: flex; gap: 15px;">
+                <a href="https://www.linkedin.com/in/alexis-eliot-55918521/" target="_blank" style="display: inline-block;">
+                    <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px; transition: opacity 0.3s;">
+                </a>
+                <a href="https://x.com/de_stalle" target="_blank" style="display: inline-block;">
+                    <img src="/x.svg" alt="Twitter/X" style="width: 24px; height: 24px; transition: opacity 0.3s;">
+                </a>
+            </div>
+        </div>
+                <hr style="border: none; height: 1px; background-color: #E5E7EB; margin: 0 0 1.5rem 0;">
+        
+        <p style="margin-bottom: 1.5rem;">Alex, 37, was a business developer in tech in Paris until February 2022 changed everything. He moved to Kyiv in May 2022 and simply stayed. After months of volunteering with local military NGOs, purchasing and delivering medical supplies to those in need, he realized the humanitarian sector deserved far better management.</p>
+
+        <p style="margin-bottom: 1.5rem;">The turning point came during the winter of 2022/2023 when Alex discovered colleagues were buying supplies for the front lines at local pharmacies rather than sourcing directly from medical distributors in Kyiv. A simple phone call could have secured larger quantities at better prices—but no one knew to make it.<br>
+        This inefficiency revealed fundamental flaws across humanitarian aid coordination: erratic sourcing, procurement, storage, shipping, and distribution driven by enthusiastic individuals but lacking management, process, coordination, planning, and basic tools. Watching financial and human resources being wasted was deeply unsettling.</p>
+
+        <p style="margin-bottom: 1.5rem;">In June 2023, Alex founded the Doshka Foundation to address these gaps directly. What started as one frustrated Frenchman delivering medical equipment to Ukrainian military medics, hospitals, and rehabilitation centers has evolved into a network spanning Europe and the US. Running 95% of operations solo with coffee and pure stubbornness, Alex witnessed firsthand the coordination crisis plaguing humanitarian logistics.</p>
+
+        <p style="margin-bottom: 1.5rem;">But Alex recognized he wasn't alone in this struggle. Across Ukraine, hundreds of nonprofit directors and humanitarian leaders were facing identical challenges—the same coordination failures, the same inefficient procurement processes, the same lack of basic management tools. The problems he experienced daily at Doshka Foundation were systemic issues affecting the entire humanitarian ecosystem.</p>
+
+        <p style="margin-bottom: 1.5rem;">From this realization emerged Platforma—the comprehensive digital logistics platform designed specifically for humanitarian aid. Built by someone who lived through the inefficiencies it solves, Platforma transforms the chaotic coordination Alex experienced into streamlined, transparent, and effective humanitarian operations that can serve nonprofit leaders across Ukraine and beyond.</p>
+
+        <p style="margin-bottom: 1.5rem;">This isn't just software development—it's crisis-tested solution building from someone who personally experienced every problem the platform addresses, designed to empower hundreds of other humanitarian leaders facing the same daily struggles.</p>
+        
     </div>
-  </div>
-</footer>
+</div>
+
+    <div id="yulia" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('yulia')">&times;</span>
+            <div style="; margin-bottom: 2rem;">
+                <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #3B82F6, #2563EB); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);">
+                    <span style="font-size: 4rem; color: white;">👩‍💼</span>
+                </div>
+                <h2 style="font-size: 2rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Yulia</h2>
+                <p style="font-size: 1.25rem; font-weight: 600; color: #3B82F6; margin: 0;">Chief Operating Officer</p>
+            </div>
+             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <p style="margin: 0; font-weight: 600;"><strong>Operations & Strategy</strong></p>
+            <div style="display: flex; gap: 15px;">
+                <a href="" target="_blank" style="display: inline-block;">
+                    <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px; transition: opacity 0.3s;">
+                </a>
+                
+            </div>
+        </div>
+                <hr style="border: none; height: 1px; background-color: #E5E7EB; margin: 0 0 1.5rem 0;">
+        
+        <p style="margin-bottom: 1.5rem;">As Chief Operating Officer, Yulia oversees the day-to-day operations of Platforma, ensuring seamless coordination between technical development, stakeholder relationships, and operational excellence. With extensive experience in humanitarian logistics and organizational management, she translates strategic vision into operational reality. Yulia leads the implementation of efficient processes, manages cross-functional teams, and ensures that platform operations align with the mission of transforming humanitarian aid delivery. Her focus on operational efficiency and stakeholder engagement drives continuous improvement across all aspects of the organization. Yulia bridges the gap between technology, users, and impact, ensuring Platforma delivers on its promise to every stakeholder in the humanitarian ecosystem.</p>
+
+    </div>
+</div>
+        </div>
+    </div>
+
+    <div id="polina" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('polina')">&times;</span>
+        <div style="; margin-bottom: 2rem;">
+            <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #EC4899, #DB2777); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);">
+                <span style="font-size: 4rem; color: white;">👩‍🎨</span>
+            </div>
+            <h2 style="font-size: 2rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Polina</h2>
+            <p style="font-size: 1.25rem; font-weight: 600; color: #EC4899; margin: 0;">Chief Marketing Officer</p>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <p style="margin: 0; font-weight: 600;"><strong>Marketing & Communications</strong></p>
+            <div style="display: flex; gap: 15px;">
+                <a href="[POLINA'S LINKEDIN URL]" target="_blank" style="display: inline-block;">
+                    <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px; transition: opacity 0.3s;">
+                </a>
+            </div>
+        </div>
+        
+        <hr style="border: none; height: 1px; background-color: #E5E7EB; margin: 0 0 1.5rem 0;">
+        
+        <p style="margin-bottom: 1.5rem;">As Chief Marketing Officer, Polina leads Platforma's brand strategy, communications, and stakeholder engagement efforts. With a deep understanding of humanitarian sector dynamics and digital marketing, she crafts compelling narratives that connect donors, nonprofits, and aid recipients. Polina oversees all marketing initiatives, from digital campaigns to community outreach, ensuring Platforma's message reaches the right audiences at the right time. Her creative approach to storytelling and user engagement helps build trust and awareness across the humanitarian ecosystem. Polina ensures that every stakeholder understands the transformative potential of coordinated aid delivery.</p>
+    </div>
+</div>
+
+    <div id="maryna" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('maryna')">&times;</span>
+        <div style="; margin-bottom: 2rem;">
+            <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #10B981, #34D399); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);">
+                <span style="font-size: 4rem; color: white;">👩‍💻</span>
+            </div>
+            <h2 style="font-size: 2rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Maryna B</h2>
+            <p style="font-size: 1.25rem; font-weight: 600; color: #10B981; margin: 0;">Senior Developer</p>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <p style="margin: 0; font-weight: 600;"><strong>Full stack development</strong></p>
+            <div style="display: flex; gap: 15px;">
+                <a href="[MARYNA'S LINKEDIN URL]" target="_blank" style="display: inline-block;">
+                    <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px; transition: opacity 0.3s;">
+                </a>
+            </div>
+        </div>
+        
+        <hr style="border: none; height: 1px; background-color: #E5E7EB; margin: 0 0 1.5rem 0;">
+        
+        <p style="margin-bottom: 1.5rem;">As Senior Developer, Maryna leads the technical implementation of Platforma's core features and infrastructure. With deep expertise in full-stack development and humanitarian technology solutions, she transforms complex requirements into elegant, scalable code. Maryna B oversees the development of critical platform functionalities, ensuring robust performance, security, and user experience across all dashboards. Her technical leadership and problem-solving skills drive continuous innovation in how the platform serves the humanitarian ecosystem. Maryna B ensures that every line of code contributes to making aid coordination more efficient and transparent.</p>
+    </div>
+</div>
+<div id="william" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('william')">&times;</span>
+        <div style="; margin-bottom: 2rem;">
+            <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #F59E0B, #FBBF24); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);">
+                <span style="font-size: 4rem; color: white;">👨‍💼</span>
+            </div>
+            <h2 style="font-size: 2rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">William D</h2>
+            <p style="font-size: 1.25rem; font-weight: 600; color: #F59E0B; margin: 0;">Product Owner</p>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <p style="margin: 0; font-weight: 600;"><strong>Product Strategy</strong></p>
+            <div style="display: flex; gap: 15px;">
+                <a href="https://www.linkedin.com/in/dorewilliam/" target="_blank" style="display: inline-block;">
+                    <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px; transition: opacity 0.3s;">
+                </a>
+            </div>
+        </div>
+        
+        <hr style="border: none; height: 1px; background-color: #E5E7EB; margin: 0 0 1.5rem 0;">
+        
+        <p style="margin-bottom: 1.5rem;">As Product Owner, William D defines and prioritizes Platforma's product roadmap, ensuring every feature delivers maximum value to humanitarian stakeholders. With expertise in agile methodologies and user-centered design, he translates stakeholder needs into actionable development priorities. William D works closely with development teams, humanitarian partners, and end users to refine requirements and validate solutions. His focus on iterative improvement and data-driven decision-making ensures the platform evolves to meet real-world coordination challenges. William D bridges the gap between user needs and technical capabilities, maintaining clear product vision while adapting to changing humanitarian landscapes.</p>
+    </div>
+</div>
+        </div>
+    </div>
+
+ <div id="michael" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('michael')">&times;</span>
+        <div style="; margin-bottom: 2rem;">
+            <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #3B82F6, #60A5FA); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);">
+                <span style="font-size: 4rem; color: white;">👨‍🏫</span>
+            </div>
+            <h2 style="font-size: 2rem; font-weight: 700; color: #1F2937; margin: 0 0 0.5rem 0;">Michael</h2>
+            <p style="font-size: 1.25rem; font-weight: 600; color: #3B82F6; margin: 0;">Strategic Advisor</p>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <p style="margin: 0; font-weight: 600;"><strong>Strategic Guidance</strong></p>
+            <div style="display: flex; gap: 15px;">
+                <a href="[MICHAEL'S LINKEDIN URL]" target="_blank" style="display: inline-block;">
+                    <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px; transition: opacity 0.3s;">
+                </a>
+            </div>
+        </div>
+        
+        <hr style="border: none; height: 1px; background-color: #E5E7EB; margin: 0 0 1.5rem 0;">
+        
+        <p style="margin-bottom: 1.5rem;">As Strategic Advisor, Michael provides strategic guidance on scaling humanitarian technology solutions and navigating the complex landscape of international aid coordination. With extensive experience in social impact initiatives and technology adoption, he advises on partnership development, market positioning, and long-term growth strategies. Michael helps identify opportunities for expansion, assess potential risks, and align organizational decisions with Platforma's mission to transform humanitarian logistics. His insights into sector dynamics and stakeholder relationships inform critical strategic choices. Michael ensures that Platforma's growth trajectory remains sustainable, impactful, and true to its humanitarian values.</p>
+    </div>
+</div>
+        </div>
+    </div>
+
+   <script is:inline>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        }
+    });
+</script>

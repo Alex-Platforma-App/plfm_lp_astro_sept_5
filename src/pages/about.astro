@@ -5,91 +5,339 @@ const pageDescription = "Learn about Platforma's mission to streamline humanitar
 ---
 
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{pageTitle}</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>About - Platforma</title>
     <meta name="description" content={pageDescription} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  </head>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  line-height: 1.6;
-  color: #1f2937;
-  background-color: #F8FAFC;
-}
-img {
-  outline: none;
-  border: none;
-}
-</style>
-
-<body style="font-family: 'Noto Sans', sans-serif; margin: 0; padding: 0; background-color: #F8FAFC; color: #0F172A;"></body>
-  <body style="font-family: 'Noto Sans', sans-serif; margin: 0; padding: 0; background-color: #F8FAFC; color: #0F172A;"></body>
-
-<!-- Navigation Header -->
-<!-- Navigation Header - STANDARD TEMPLATE -->
-<nav style="background-color: white; padding: 0; position: fixed; top: 0; left: 0; right: 0; z-index: 50; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; height: 138px;">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
-    <!-- Logo -->
-    <div>
-      <img src="/images/plfm_logo_header.png" alt="Platforma" style="height: 72px; width: auto;">
-    </div>
-    
-  <!-- Center navigation buttons -->
-<div style="display: flex; align-items: center; gap: 2rem; flex: 1; justify-content: center; margin: 0 2rem;">
-  
-  <!-- HOME BUTTON -->
-  <a href="/" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Home</a>
-  
-  <!-- ABOUT BUTTON - ACTIVE -->
-  <a href="/about" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(to top, #F6762B 12%, #F79A1E 24%, #F9B813 37%, #FACF0A 50%, #FBE004 64%, #FBE901 80%, #FCED00 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">About</a>
-  
-  <!-- TEAM BUTTON -->
-  <a href="/team" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Team</a>
-  
-  <!-- HOW IT WORKS BUTTON -->
-  <a href="/how-it-works" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 120px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">How It Works</a>
-  
-  <!-- BLOG BUTTON -->
-  <a href="/blog" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Blog</a>
-  
-</div>
-    
-    <!-- Right side: Sign In button and language selector -->
-    <div style="display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 0.5rem; margin-right: 64px; height: 138px; position: relative;">
+    <style>
+    /* Universal reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background-color: #f8fafc;
+    }
+
+    img {
+      outline: none;
+      border: none;
+    }
+
+    /* Responsive Navigation System */
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 138px;
+    }
+
+    .nav-logo img {
+      height: 72px;
+      width: auto;
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex: 1;
+      justify-content: center;
+      margin: 0 1rem;
+    }
+
+    .nav-button {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      min-width: 70px;
+      height: 40px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
+    }
+
+    .nav-button.inactive {
+      background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%);
+    }
+
+    .nav-button.active {
+      color: #182231;
+      font-weight: 600;
+      background: linear-gradient(to right, #F79A1E 0%, #F9B813 25%, #FACF0A 40%, #FBE004 60%, #FBE901 80%, #FCED00 100%);
+      border: 1px solid #182231;
+    }
+
+    .nav-button.how-it-works {
+      min-width: 100px;
+    }
+
+    .nav-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-right: 64px;
+      height: 138px;
+      position: relative;
+    }
+
+    .sign-in-btn {
+      background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.25rem;
+      border: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 100px;
+      height: 40px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 49px;
+      right: 0;
+      white-space: nowrap;
+    }
+
+    .language-selector {
+      position: absolute;
+      bottom: 10px;
+      right: 0;
+    }
+
+    .language-select {
+      background: white;
+      color: #334155;
+      padding: 0.2rem 1.2rem 0.2rem 0.4rem;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      font-size: 0.6rem;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      appearance: none;
+    }
+
+    .language-arrow {
+      position: absolute;
+      right: 0.4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #334155;
+      font-size: 0.5rem;
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      display: none;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1200px) {
+      .nav-center {
+        gap: 1rem;
+        margin: 0 0.5rem;
+      }
       
-      <!-- SIGN IN BUTTON - positioned at same level as other nav buttons -->
-      <button style="background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; padding: 0.5rem 1.5rem; border-radius: 0.25rem; border: none; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all 0.2s ease; min-width: 100px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1); position: absolute; top: 49px; right: 0; white-space: nowrap;">Sign In</button>
+      .nav-button {
+        padding: 0.5rem 0.75rem;
+        min-width: 60px;
+        font-size: 0.8rem;
+      }
       
-      <!-- Language selector below Sign In -->
-      <div style="position: absolute; bottom: 10px; right: 0;">
-        <select style="background: white; color: #334155; padding: 0.2rem 1.2rem 0.2rem 0.4rem; border-radius: 1rem; border: 1px solid #e5e7eb; font-size: 0.6rem; cursor: pointer; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); appearance: none;">
-          <option value="en">🇬🇧 EN</option>
-          <option value="uk">🇺🇦 UK</option>
-          <option value="ru">🇷🇺 RU</option>
-          <option value="fr">🇫🇷 FR</option>
-          <option value="de">🇩🇪 DE</option>
-          <option value="pl">🇵🇱 PL</option>
-        </select>
-        <div style="position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: #334155; font-size: 0.5rem;">▼</div>
+      .nav-button.how-it-works {
+        min-width: 80px;
+      }
+      
+      .nav-right {
+        margin-right: 32px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-center {
+        gap: 0.75rem;
+      }
+      
+      .nav-button {
+        padding: 0.4rem 0.6rem;
+        min-width: 50px;
+        font-size: 0.75rem;
+        height: 36px;
+      }
+      
+      .nav-button.how-it-works {
+        min-width: 70px;
+      }
+      
+      .sign-in-btn {
+        min-width: 80px;
+        height: 36px;
+        font-size: 0.75rem;
+        top: 51px;
+      }
+      
+      .nav-right {
+        margin-right: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        height: 100px;
+        padding: 0 0.5rem;
+      }
+      
+      .nav-center {
+        display: none;
+      }
+      
+      .mobile-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 0.75rem 0.5rem;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        justify-content: space-around;
+        align-items: center;
+      }
+      
+      .mobile-nav .nav-button {
+        flex-direction: column;
+        padding: 0.5rem 0.25rem;
+        min-width: 50px;
+        height: 50px;
+        font-size: 0.7rem;
+        gap: 0.25rem;
+      }
+      
+      .nav-right {
+        height: 100px;
+        margin-right: 8px;
+      }
+      
+      .sign-in-btn {
+        top: 30px;
+        height: 32px;
+        min-width: 70px;
+        font-size: 0.7rem;
+      }
+      
+      .language-selector {
+        bottom: 5px;
+      }
+      
+      body {
+        padding-bottom: 80px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-container {
+        height: 80px;
+      }
+      
+      .nav-logo img {
+        height: 50px;
+      }
+      
+      .nav-right {
+        height: 80px;
+        margin-right: 4px;
+      }
+      
+      .sign-in-btn {
+        top: 24px;
+        height: 28px;
+        min-width: 60px;
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
+      }
+      
+      .mobile-nav .nav-button {
+        min-width: 45px;
+        height: 45px;
+        font-size: 0.65rem;
+      }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <nav style="background-color: white; padding: 0; position: fixed; top: 0; left: 0; right: 0; z-index: 50; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="/images/plfm_logo_header.png" alt="Platforma">
+        </div>
+        
+        <div class="nav-center">
+          <a href="/" class="nav-button inactive">Home</a>
+          <a href="/about" class="nav-button active">About</a>
+          <a href="/team" class="nav-button inactive">Team</a>
+          <a href="/how-it-works" class="nav-button inactive how-it-works">How It Works</a>
+          <a href="/blog" class="nav-button inactive">Blog</a>
+        </div>
+        
+        <div class="nav-right">
+          <button class="sign-in-btn">Sign In</button>
+          <div class="language-selector">
+            <select class="language-select">
+              <option value="en">🇬🇧 EN</option>
+              <option value="uk">🇺🇦 UK</option>
+              <option value="ru">🇷🇺 RU</option>
+              <option value="fr">🇫🇷 FR</option>
+              <option value="de">🇩🇪 DE</option>
+              <option value="pl">🇵🇱 PL</option>
+            </select>
+            <div class="language-arrow">▼</div>
+          </div>
+        </div>
       </div>
-      
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <a href="/" class="nav-button inactive">Home</a>
+      <a href="/about" class="nav-button active">About</a>
+      <a href="/team" class="nav-button inactive">Team</a>
+      <a href="/how-it-works" class="nav-button inactive">How It Works</a>
+      <a href="/blog" class="nav-button inactive">Blog</a>
     </div>
-  </div>
-</nav>
+
     <!-- Hero Section -->
     <section style="padding: 200px 0 5rem 0; background-color: #F8FAFC;">
       <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
@@ -118,19 +366,19 @@ img {
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
           <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <div style="font-size: 3rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">60-80%</div>
+            <div style="font-size: 3rem; font-weight: 700; color: #1E293B; margin-bottom: 0.5rem;">60-80%</div>
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Logistics Cost</h3>
             <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">Of all humanitarian expenditure goes to logistics coordination</p>
           </div>
           
           <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <div style="font-size: 3rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">50%</div>
+            <div style="font-size: 3rem; font-weight: 700; color: #1E293B; margin-bottom: 0.5rem;">50%</div>
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Material Waste</h3>
             <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">Of materials purchased are wasted through inadequate systems</p>
           </div>
           
           <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <div style="font-size: 3rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">33%</div>
+            <div style="font-size: 3rem; font-weight: 700; color: #1E293B; margin-bottom: 0.5rem;">Billions</div>
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Budget Waste</h3>
             <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">Of allocated budgets wasted through logistics inefficiencies</p>
           </div>
@@ -158,25 +406,25 @@ img {
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
           <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <div style="font-size: 3rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">12.7M</div>
+            <div style="font-size: 3rem; font-weight: 700; color: #1E293B; margin-bottom: 0.5rem;">12.7M</div>
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">People Need Aid</h3>
             <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">36% of Ukraine's population needs humanitarian assistance in 2025</p>
           </div>
           
           <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <div style="font-size: 3rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">$3.1B</div>
+            <div style="font-size: 3rem; font-weight: 700; color: #1E293B; margin-bottom: 0.5rem;">$3.1B</div>
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Funding Requested</h3>
             <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">For Ukraine's 2024 humanitarian response</p>
           </div>
           
           <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <div style="font-size: 3rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">62%</div>
+            <div style="font-size: 3rem; font-weight: 700; color: #1E293B; margin-bottom: 0.5rem;">38%</div>
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Funding Gap</h3>
             <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">Only 62% funded by November 2024, leaving critical gaps</p>
           </div>
           
           <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <div style="font-size: 3rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">645</div>
+            <div style="font-size: 3rem; font-weight: 700; color: #1E293B; margin-bottom: 0.5rem;">645</div>
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Organizations</h3>
             <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">Operating simultaneously with limited coordination systems</p>
           </div>
@@ -203,7 +451,7 @@ img {
           <div style="background: #F8FAFC; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
             <div style="font-size: 4rem; margin-bottom: 1rem; text-align: center;">💡</div>
             <h3 style="font-size: 1.5rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0; text-align: center;">The Turning Point</h3>
-            <p style="color: #6B7280; margin: 0; font-style: italic; text-align: center;">
+            <p style="color: #1F2937; margin: 0; font-style: italic; text-align: center;">
               "The turning point came when he discovered that some colleagues were buying supplies for the front lines at local pharmacies, rather than sourcing them directly from medical distributors in Kyiv. A simple phone call could have secured larger quantities at better prices."
             </p>
           </div>
@@ -218,53 +466,67 @@ img {
           <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
             The Human Cost of Broken Systems
           </h2>
-          <p style="font-size: 1.125rem; color: #6B7280; max-width: 700px; margin: 0 auto;">
+          <p style="font-size: 1.125rem; color: #1F2937; max-width: 700px; margin: 0 auto;">
             The current fragmented approach creates devastating inefficiencies that hurt everyone in the humanitarian ecosystem.
           </p>
         </div>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
           <!-- Aid Recipients -->
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <div style="width: 60px; height: 60px; background: #FED7AA; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
-              <div style="font-size: 1.5rem;">👨‍👩‍👧‍👦</div>
-            </div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0; text-align: center;">For Aid Recipients</h3>
-            <ul style="color: #6B7280; margin: 0; padding-left: 1.25rem; line-height: 1.6;">
-              <li style="margin-bottom: 0.5rem;">Significant delays in receiving critical supplies due to coordination failures</li>
-              <li style="margin-bottom: 0.5rem;">Duplicate deliveries to some while others receive nothing</li>
-              <li>No visibility into what aid is available or when it might arrive</li>
-            </ul>
-          </div>
+<div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+    <div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+        <img src="images/recip 1321315248.png" alt="Aid Recipients" style="width: 72px; height: 72px; object-fit: contain;">
+    </div>
+    <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0; text-align: center;">For Recipients</h3>
+    <ul style="color: #1F2937; margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+        <li style="margin-bottom: 0.5rem;"><strong>Thousands with urgent needs:</strong> No direct communication channel to aid providers</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Duplicate deliveries</strong> to some while others receive nothing</li>
+        <li><strong>No visibility into what aid is available</strong> or when it might arrive</li>
+    </ul>
+</div>
           
           <!-- Humanitarian Workers -->
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <div style="width: 60px; height: 60px; background: #DBEAFE; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
-              <div style="font-size: 1.5rem;">🏢</div>
-            </div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0; text-align: center;">For Humanitarian Workers</h3>
-            <ul style="color: #6B7280; margin: 0; padding-left: 1.25rem; line-height: 1.6;">
-              <li style="margin-bottom: 0.5rem;">Excessive time spent on logistics coordination instead of frontline work</li>
-              <li style="margin-bottom: 0.5rem;">Burnout and frustration from preventable inefficiencies</li>
-              <li>Impossible reporting requirements to multiple donors with different standards</li>
-            </ul>
-          </div>
+<div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+    <div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+        <img src="images/ngo 1321315247.png" alt="Humanitarian Workers" style="width: 72px; height: 72px; object-fit: contain;">
+    </div>
+    <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0; text-align: center;">For Nonprofits</h3>
+    <ul style="color: #1F2937; margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+        <li style="margin-bottom: 0.5rem;"><strong>Hundreds of organizations using different systems and approaches,</strong> unable to coordinate</li>
+        <li style="margin-bottom: 0.5rem;"><strong>60-80% of time spent on logistics coordination</strong> instead of frontline work</li>
+        <li><strong>Burnout and frustration from preventable inefficiencies</strong> - aid workers leaving the sector</li>
+    </ul>
+</div>
           
           <!-- Donors -->
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <div style="width: 60px; height: 60px; background: #e8f5e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
-              <div style="font-size: 1.5rem;">💝</div>
-            </div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0; text-align: center;">For Donors</h3>
-            <ul style="color: #6B7280; margin: 0; padding-left: 1.25rem; line-height: 1.6;">
-              <li style="margin-bottom: 0.5rem;">Trust erosion due to lack of transparency</li>
-              <li style="margin-bottom: 0.5rem;">No reliable way to track where money actually goes</li>
-              <li>Impact uncertainty with no reliable outcome measurement</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+<!-- Donors -->
+<div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+    <div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+        <img src="images/donor 1321315246.png" alt="Donors" style="width: 72px; height: 72px; object-fit: contain;">
+    </div>
+    <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0; text-align: center;">For Donors</h3>
+    <ul style="color: #1F2937; margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+        <li style="margin-bottom: 0.5rem;"><strong>No reliable way to track where money actually goes</strong> - leading to trust erosion</li>
+        <li style="margin-bottom: 0.5rem;"><strong>In-kind donations completely unmanaged</strong> - physical items donated with no visibility</li>
+        <li><strong>Donors hardly have access to photos/videos reports</strong></li>
+    </ul>
+</div>
+
+<!-- Suppliers -->
+<div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+    <div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+        <img src="images/suppl 1321315249.png" alt="Suppliers" style="width: 72px; height: 72px; object-fit: contain;">
+    </div>
+    <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0; text-align: center;">For Suppliers</h3>
+    <ul style="color: #1F2937; margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+        <li style="margin-bottom: 0.5rem;"><strong>Equipment of varying quality and legitimacy</strong> entering the aid system</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Payment delays and communication barriers</strong> creating operational bottlenecks</li>
+        <li><strong>No centralized marketplace</strong> to efficiently reach verified organizations</li>
+    </ul>
+</div>
+
     </section>
+    
 
     <!-- Platform Solution Section -->
     <section style="padding: 5rem 0; background-color: white;">
@@ -273,19 +535,19 @@ img {
           <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
             Platforma: One Platform for Complete Ecosystem Integration
           </h2>
-          <p style="font-size: 1.125rem; color: #6B7280; max-width: 800px; margin: 0 auto;">
-            Our platform creates the missing link: One digital ecosystem where every stakeholder can see WHAT is needed, WHERE, by WHO, and HOW it can be delivered.
-          </p>
+<p style="font-size: 2.25rem; color: #1F2937; max-width: 800px; margin: 0 auto;">
+    Platforma creates the missing link: a unified digital ecosystem where every stakeholder can see <strong>what</strong> is needed, <strong>where</strong> it is needed, <strong>who</strong> needs it, and <strong>how</strong> it can be delivered.
+</p>
         </div>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
           <!-- Recipients -->
           <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
             <div style="width: 60px; height: 60px; background: #FED7AA; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
-              <div style="font-size: 1.5rem;">👨‍👩‍👧‍👦</div>
+        <img src="images/recip 1321315248.png" alt="Recipients" style="width: 72px; height: 72px; object-fit: contain;">
             </div>
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">For Recipients</h3>
-            <ul style="color: #6B7280; margin: 0; padding: 0; list-style: none; text-align: left;">
+            <ul style="color: #1F2937; margin: 0; padding: 0; list-style: none; text-align: left;">
               <li style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
                 Automated coordination and reduced duplicate efforts
               </li>
@@ -297,14 +559,34 @@ img {
               </li>
             </ul>
           </div>
+
+      <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
+    <div style="width: 60px; height: 60px; background: #DBEAFE; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+        <img src="images/ngo 1321315247.png" alt="Nonprofits" style="width: 72px; height: 72px; object-fit: contain;">
+    </div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">For Nonprofits</h3>
+    <ul style="color: #1F2937; margin: 0; padding: 0; list-style: none; text-align: left;">
+        <li style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
+            Unified catalog of available resources across all suppliers
+        </li>
+        <li style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
+            Automated coordination to reduce duplication and streamline efforts
+        </li>
+        <li style="padding-left: 1rem; position: relative;">
+            Professional-grade reporting tools tailored for volunteers
+        </li>
+    </ul>
+</div>
+
+
           
           <!-- Donors -->
           <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
             <div style="width: 60px; height: 60px; background: #e8f5e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
-              <div style="font-size: 1.5rem;">💝</div>
+        <img src="images/donor 1321315246.png" alt="Donors" style="width: 72px; height: 72px; object-fit: contain;">
             </div>
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">For Donors</h3>
-            <ul style="color: #6B7280; margin: 0; padding: 0; list-style: none; text-align: left;">
+            <ul style="color: #1F2937; margin: 0; padding: 0; list-style: none; text-align: left;">
               <li style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
                 Complete transparency from donation to delivery
               </li>
@@ -320,10 +602,10 @@ img {
           <!-- Suppliers -->
           <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
             <div style="width: 60px; height: 60px; background: #F3E8FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
-              <div style="font-size: 1.5rem;">🏭</div>
+        <img src="images/suppl 1321315249.png" alt="Suppliers" style="width: 72px; height: 72px; object-fit: contain;">
             </div>
             <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">For Suppliers</h3>
-            <ul style="color: #6B7280; margin: 0; padding: 0; list-style: none; text-align: left;">
+            <ul style="color: #1F2937; margin: 0; padding: 0; list-style: none; text-align: left;">
               <li style="margin-bottom: 0.5rem; padding-left: 1rem; position: relative;">
                 Direct access to verified humanitarian organizations
               </li>
@@ -335,217 +617,13 @@ img {
               </li>
             </ul>
           </div>
+    
         </div>
       </div>
-    </section>
 
-    <!-- Critical Sectors Section -->
-    <section style="padding: 5rem 0; background-color: #F8FAFC;">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
-            Three Critical Sectors Where Lives Hang in the Balance
-          </h2>
-          <p style="font-size: 1.125rem; color: #6B7280; max-width: 700px; margin: 0 auto;">
-            In our initial launch phase, we focus on the sectors where coordination failures have the most devastating impact.
-          </p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🏥</div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Medical & Pharmaceutical</h3>
-            <p style="color: #6B7280; margin: 0; line-height: 1.6;">
-              Critical supplies reaching hospitals and clinics faster through coordinated distribution networks.
-            </p>
-          </div>
-          
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🍞</div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Food & WASH</h3>
-            <p style="color: #6B7280; margin: 0; line-height: 1.6;">
-              Food distribution and clean water infrastructure coordination to prevent duplication and gaps.
-            </p>
-          </div>
-          
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🏠</div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Housing & Reconstruction</h3>
-            <p style="color: #6B7280; margin: 0; line-height: 1.6;">
-              Temporary shelter and reconstruction materials tracking for efficient resource allocation.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Proven Results Section -->
-    <section style="padding: 5rem 0; background-color: white;">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
-            Proven Results: Real-World Validation
-          </h2>
-          <p style="font-size: 1.125rem; color: #6B7280; max-width: 800px; margin: 0 auto;">
-            We don't just build for humanitarian workers—we ARE humanitarian workers. Platforma is built by the Doshka Foundation team, actively delivering medical supplies in Ukraine's humanitarian crisis.
-          </p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-          <div style="background: #F8FAFC; border-radius: 1rem; padding: 3rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-            <h3 style="font-size: 1.5rem; font-weight: 600; color: #1F2937; margin: 0 0 1.5rem 0; text-align: center;">Current Proof Points</h3>
-            <div style="space-y: 1rem;">
-              <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                <div style="width: 20px; height: 20px; background: #e8f5e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
-                  <span style="color: #2d7d32; font-size: 0.75rem;">✓</span>
-                </div>
-                <p style="margin: 0; color: #6B7280;">Operating nonprofit using early version of platform daily</p>
-              </div>
-              
-              <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                <div style="width: 20px; height: 20px; background: #e8f5e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
-                  <span style="color: #2d7d32; font-size: 0.75rem;">✓</span>
-                </div>
-                <p style="margin: 0; color: #6B7280;">A dozen suppliers confirmed willingness to pay for coordination efficiency</p>
-              </div>
-              
-              <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                <div style="width: 20px; height: 20px; background: #e8f5e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
-                  <span style="color: #2d7d32; font-size: 0.75rem;">✓</span>
-                </div>
-                <p style="margin: 0; color: #6B7280;">Hundreds of donors ready to use transparency features</p>
-              </div>
-              
-              <div style="display: flex; align-items: center;">
-                <div style="width: 20px; height: 20px; background: #e8f5e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
-                  <span style="color: #2d7d32; font-size: 0.75rem;">✓</span>
-                </div>
-                <p style="margin: 0; color: #6B7280;">A dozen partner organizations eager to join unified system</p>
-              </div>
-            </div>
-          </div>
-          
-          <div>
-            <h3 style="font-size: 1.5rem; font-weight: 600; color: #1F2937; margin: 0 0 1.5rem 0;">The "Dogfooding" Advantage</h3>
-            <p style="font-size: 1.125rem; color: #6B7280; margin: 0 0 1.5rem 0; line-height: 1.7;">
-              Every feature solves a problem we've personally experienced in crisis conditions. This isn't theoretical—we're building the solution we wish we'd had from day one.
-            </p>
-            <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); border-left: 4px solid #8B5CF6;">
-              <p style="margin: 0; color: #6B7280; font-style: italic; text-align: center;">
-                "This inefficiency, along with the broader mismanagement, made it clear: we needed to rationalize, digitize, and streamline the entire system. We just needed to build our own tool."
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Funding Goal Section -->
-    <section style="padding: 5rem 0; background-color: #F8FAFC;">
-      <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
-            $50,000 Goal Breakdown
-          </h2>
-          <p style="font-size: 1.125rem; color: #6B7280; max-width: 700px; margin: 0 auto;">
-            Crowdfunding represents our path to independence—allowing us to build a tool that truly serves the humanitarian community rather than investor interests.
-          </p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
-            <div style="font-size: 2.5rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">$30,000</div>
-            <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Senior Developer</h3>
-            <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">6 months salary to accelerate MVP completion</p>
-          </div>
-          
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
-            <div style="font-size: 2.5rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">$8,000</div>
-            <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Marketing</h3>
-            <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">User acquisition to onboard first 100 organizations</p>
-          </div>
-          
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
-            <div style="font-size: 2.5rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">$7,000</div>
-            <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Infrastructure</h3>
-            <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">Platform infrastructure, security, and compliance</p>
-          </div>
-          
-          <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
-            <div style="font-size: 2.5rem; font-weight: 700; color: #8B5CF6; margin-bottom: 0.5rem;">$5,000</div>
-            <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Operations</h3>
-            <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">Operations and team support</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Global Vision Section -->
-    <section style="padding: 5rem 0; background-color: white;">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1F2937; margin: 0 0 1rem 0;">
-            Global Scale, Immediate Application
-          </h2>
-          <p style="font-size: 1.125rem; color: #6B7280; max-width: 800px; margin: 0 auto;">
-            Platforma is ready for today's emergencies: Natural disasters, conflict zones, and long-term development projects. As climate change creates more frequent humanitarian emergencies, Platforma provides the coordination infrastructure needed for rapid, effective response.
-          </p>
-        </div>
-        
-        <div style="position: relative; max-width: 800px; margin: 0 auto;">
-          <!-- Timeline Line -->
-          <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #E5E7EB; transform: translateX(-50%);"></div>
-          
-          <!-- Phase 1 -->
-          <div style="display: flex; align-items: center; margin-bottom: 3rem; position: relative;">
-            <div style="flex: 1; padding-right: 2rem; text-align: right;">
-              <div style="background: white; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-                <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Phase 1 (2025-2026): Master Ukraine</h3>
-                <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">
-                  Prove the model works in the world's largest humanitarian response
-                </p>
-              </div>
-            </div>
-            <div style="width: 20px; height: 20px; background: #8B5CF6; border-radius: 50%; position: relative; z-index: 10;"></div>
-            <div style="flex: 1; padding-left: 2rem;"></div>
-          </div>
-          
-          <!-- Phase 2 -->
-          <div style="display: flex; align-items: center; margin-bottom: 3rem; position: relative;">
-            <div style="flex: 1; padding-right: 2rem;"></div>
-            <div style="width: 20px; height: 20px; background: #94A3B8; border-radius: 50%; position: relative; z-index: 10;"></div>
-            <div style="flex: 1; padding-left: 2rem;">
-              <div style="background: white; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-                <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Phase 2 (2027-2028): Regional Expansion</h3>
-                <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">
-                  Regional expansion to other conflict zones and refugee crises
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Phase 3 -->
-          <div style="display: flex; align-items: center; position: relative;">
-            <div style="flex: 1; padding-right: 2rem; text-align: right;">
-              <div style="background: white; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
-                <h3 style="font-size: 1.25rem; font-weight: 600; color: #1F2937; margin: 0 0 0.5rem 0;">Phase 3 (2029-2030): Global Standard</h3>
-                <p style="color: #6B7280; margin: 0; font-size: 0.875rem;">
-                  Become the default coordination platform for humanitarian response
-                </p>
-              </div>
-            </div>
-            <div style="width: 20px; height: 20px; background: #94A3B8; border-radius: 50%; position: relative; z-index: 10;"></div>
-            <div style="flex: 1; padding-left: 2rem;"></div>
-          </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #F8FAFC; border-radius: 1rem;">
-          <h3 style="font-size: 1.5rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">The Multiplier Impact</h3>
-          <p style="font-size: 1.125rem; color: #6B7280; margin: 0;">
-            Every future humanitarian crisis will be more efficient because the coordination infrastructure already exists.
-          </p>
-        </div>
-      </div>
     </section>
 
     <!-- CTA Section -->
@@ -572,11 +650,11 @@ img {
               transition: all 0.3s ease;
               display: inline-flex;
               align-items: center;
-            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1)';">
-              Donate Now
+            ">
+              Support the Project
             </a>
             
-            <a href="/platform" style="
+            <a href="/" style="
               background: white;
               color: #131B27;
               text-decoration: none;
@@ -588,158 +666,89 @@ img {
               transition: all 0.3s ease;
               display: inline-flex;
               align-items: center;
-            " onmouseover="this.style.background='#131B27'; this.style.color='white';" onmouseout="this.style.background='white'; this.style.color='#131B27';">
-              Visit the Platform
+            ">
+              Visit Homepage
             </a>
-          </div>
-          
-          <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #E5E7EB;">
-            <p style="color: #6B7280; margin: 0; font-style: italic;">
-              #PlatformaForGood #HumanitarianTech #UkraineSupport #TransparentAid
-            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-<footer style="padding: 3rem 0; background-color: white; border-top: 1px solid #E5E7EB;">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-      
-      <!-- Company Info -->
-      <div>
-        <img src="/images/plfm_logo_header.png" alt="Platforma Logo" style="height: 40px; width: auto; margin-bottom: 1rem;">
-        <p style="color: #6B7280; margin: 0 0 1rem 0; line-height: 1.6;">
-          Streamlining humanitarian aid delivery across Ukraine through transparent coordination and efficient logistics.
-        </p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="https://twitter.com/platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/x.svg" alt="X" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://instagram.com/platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/instagram.svg" alt="Instagram" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://facebook.com/platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/Group (4).svg" alt="Facebook" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://linkedin.com/company/platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://threads.net/@platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/threads.svg" alt="Threads" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://bsky.app/profile/platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/bluesky.svg" alt="Bluesky" style="width: 24px; height: 24px;">
-          </a>
-          
-          <a href="https://tiktok.com/@platforma" target="_blank" style="
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <img src="/tiktok.svg" alt="TikTok" style="width: 24px; height: 24px;">
-          </a>
+  <footer style="padding: 3rem 0; background-color: white; border-top: 1px solid #E5E7EB;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        
+       <!-- Company Info -->
+<div>
+  <img src="/images/plfm_logo_header.png" alt="Platforma Logo" style="height: 40px; width: auto; margin-bottom: 1rem;">
+  <p style="color: #6B7280; margin: 0 0 1rem 0; line-height: 1.6;">
+    Streamlining humanitarian aid delivery across Ukraine through transparent coordination and efficient logistics.
+  </p>
+  <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+    <a href="https://x.com/platforma_app" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/x.svg" alt="X" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.instagram.com/platforma.app/" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/instagram.svg" alt="Instagram" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.linkedin.com/company/platforma-app/?viewAsMember=true" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.threads.com/@platforma.app" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/threads.svg" alt="Threads" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://bsky.app/profile/platformaapp.com" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/bluesky.svg" alt="Bluesky" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.tiktok.com/@platforma_app" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/tiktok.svg" alt="TikTok" style="width: 24px; height: 24px;">
+    </a>
+  </div>
+</div>
+        
+        <!-- Platform Links -->
+        <div>
+          <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Platform</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/how-it-works" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">How It Works</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/nonprofits" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Nonprofits</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/donors" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Donors</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/suppliers" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Suppliers</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/recipients" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Recipients</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company Links -->
+        <div>
+          <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Company</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">About</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/team" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Team</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/blog" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Blog</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Support Links -->
+        <div>
+          <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Support</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/help" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Help Center</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/privacy" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/terms" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Terms of Service</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/security" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Security</a></li>
+          </ul>
         </div>
       </div>
       
-      <!-- Quick Links -->
-      <div>
-        <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Platform</h3>
-        <ul style="list-style: none; margin: 0; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="/how-it-works" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">How It Works</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/nonprofits" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Nonprofits</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/donors" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Donors</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/suppliers" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Suppliers</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/recipients" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Recipients</a></li>
-        </ul>
-      </div>
-      
-      <!-- Company -->
-      <div>
-        <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Company</h3>
-        <ul style="list-style: none; margin: 0; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">About</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/team" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease; font-weight: 600;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Team</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/blog" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Blog</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Support -->
-      <div>
-        <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Support</h3>
-        <ul style="list-style: none; margin: 0; padding: 0;">
-          <li style="margin-bottom: 0.5rem;"><a href="/help" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Help Center</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/privacy" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/terms" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Terms of Service</a></li>
-          <li style="margin-bottom: 0.5rem;"><a href="/security" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Security</a></li>
-        </ul>
+      <!-- Copyright -->
+      <div style="border-top: 1px solid #E5E7EB; padding-top: 2rem; text-align: center;">
+        <p style="color: #94A3B8; margin: 0; font-size: 0.875rem;">
+          © 2025 Platforma. All rights reserved. Built with determination to transform humanitarian aid.
+        </p>
       </div>
     </div>
-    
-    <!-- Copyright -->
-    <div style="border-top: 1px solid #E5E7EB; padding-top: 2rem; text-align: center;">
-      <p style="color: #94A3B8; margin: 0; font-size: 0.875rem;">
-        © 2025 Platforma. All rights reserved. Built with determination to transform humanitarian aid.
-      </p>
-    </div>
-  </div>
-</footer>
+  </footer>
+</body>
+</html>     

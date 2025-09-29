@@ -5,7 +5,7 @@ const pageDescription = "The all-in-one platform connecting nonprofits, donors, 
 ---
 
 <html lang="en">
- <head>
+<head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
@@ -14,327 +14,384 @@ const pageDescription = "The all-in-one platform connecting nonprofits, donors, 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;  line-height: 1.6;
-  color: #1f2937;
-  background-color: #f9fafb;
-}
+    
+    <style>
+    /* Universal reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-img {
-  outline: none;
-  border: none;
-}
-  /* Navigation */
-img {
-  outline: none;
-  border: none;
-}
+    body {
+      font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background-color: #f8fafc;
+    }
 
-/* Navigation */
-.nav {
-  background-color: white;
-  padding: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-}
+    img {
+      outline: none;
+      border: none;
+    }
 
-.nav-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1rem;
+    /* Responsive Navigation System */
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 138px;
+    }
+
+    .nav-logo img {
+      height: 72px;
+      width: auto;
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex: 1;
+      justify-content: center;
+      margin: 0 1rem;
+    }
+
+    .nav-button {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      min-width: 70px;
+      height: 40px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
+    }
+
+    .nav-button.inactive {
+      background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%);
+    }
+
+    .nav-button.active {
+      color: #182231;
+      font-weight: 600;
+      background: linear-gradient(to right, #F79A1E 0%, #F9B813 25%, #FACF0A 40%, #FBE004 60%, #FBE901 80%, #FCED00 100%);
+      border: 1px solid #182231;
+    }
+
+    .nav-button.how-it-works {
+      min-width: 100px;
+    }
+
+ .nav-right {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 64px;
+  justify-content: flex-end;
+  margin-right: 20px;
+  height: 138px;
 }
 
-.logo img {
-  height: 36px;
-  width: auto;
+    .sign-in-btn {
+      background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.25rem;
+      border: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 100px;
+      height: 40px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 49px;
+      right: 0;
+      white-space: nowrap;
+    }
+
+    .language-selector {
+  position: relative;
 }
 
-/* Hero Section */
+    .language-select {
+  background: white;
+  color: #334155;
+  padding: 0.4rem 2.4rem 0.4rem 0.8rem;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  appearance: none;
+}
 
-      /* Hero Section */
-      .hero {
-        padding: 6rem 1rem 4rem;
-        background-color: #f9fafb;
+   .language-arrow {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #334155;
+  font-size: 1rem;
+}
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 1rem 4rem;
+      background-color: #f9fafb;
+    }
+    
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #1f2937;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: #6b7280;
+      max-width: 64rem;
+      margin: 0 auto 2rem;
+    }
+    
+    .cta-button {
+      background-color: #1e293b;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s ease;
+      margin-bottom: 3rem;
+    }
+    
+    .cta-button:hover {
+      background-color: #334155;
+    }
+    
+    /* Dashboard Preview */
+    .dashboard-preview {
+      max-width: 1152px;
+      margin: 0 auto;
+    }
+    
+    .dashboard-preview img {
+      outline: none !important;
+      border: none !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1200px) {
+      .nav-center {
+        gap: 1rem;
+        margin: 0 0.5rem;
       }
       
-      .hero-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        text-align: center;
+      .nav-button {
+        padding: 0.5rem 0.75rem;
+        min-width: 60px;
+        font-size: 0.8rem;
+      }
+      
+      .nav-button.how-it-works {
+        min-width: 80px;
+      }
+      
+      .nav-right {
+        margin-right: 32px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-center {
+        gap: 0.75rem;
+      }
+      
+      .nav-button {
+        padding: 0.4rem 0.6rem;
+        min-width: 50px;
+        font-size: 0.75rem;
+        height: 36px;
+      }
+      
+      .nav-button.how-it-works {
+        min-width: 70px;
+      }
+      
+      .sign-in-btn {
+        min-width: 80px;
+        height: 36px;
+        font-size: 0.75rem;
+        top: 51px;
+      }
+      
+      .nav-right {
+        margin-right: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        height: 100px;
+        padding: 0 0.5rem;
+      }
+      
+      .nav-center {
+        display: none;
+      }
+      
+      .mobile-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 0.75rem 0.5rem;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        justify-content: space-around;
+        align-items: center;
+      }
+      
+      .mobile-nav .nav-button {
+        flex-direction: column;
+        padding: 0.5rem 0.25rem;
+        min-width: 50px;
+        height: 50px;
+        font-size: 0.7rem;
+        gap: 0.25rem;
+      }
+      
+      .nav-right {
+        height: 100px;
+        margin-right: 8px;
+      }
+      
+      .sign-in-btn {
+        top: 30px;
+        height: 32px;
+        min-width: 70px;
+        font-size: 0.7rem;
+      }
+      
+      .language-selector {
+        bottom: 5px;
+      }
+      
+      body {
+        padding-bottom: 80px;
       }
       
       .hero h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #1f2937;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
+        font-size: 2rem;
       }
-      
-      .hero p {
-        font-size: 1.25rem;
-        color: #6b7280;
-        max-width: 64rem;
-        margin: 0 auto 2rem;
-      }
-      
-      .cta-button {
-        background-color: #1e293b;
-        color: white;
-        padding: 0.75rem 2rem;
-        border-radius: 0.5rem;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: background-color 0.3s ease;
-        margin-bottom: 3rem;
-      }
-      
-      .cta-button:hover {
-        background-color: #334155;
-      }
-      
-      /* Dashboard Preview */
-      .dashboard-preview {
-        max-width: 1152px;
-        margin: 0 auto;
-    
-      }
-      
-      .dashboard-header {
-        background-color: #334155;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        margin-bottom: 1rem;
-      }
-      
-      .dashboard-title {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-      }
-      
-      .dashboard-logo {
-        background-color: #fbbf24;
-        color: #1e293b;
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
-        font-size: 0.875rem;
-        font-weight: bold;
-        margin-right: 0.75rem;
-      }
-      
-      .dashboard-label {
-        color: white;
-        font-size: 1.125rem;
-      }
-      
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-      }
-      
-      .stat-card {
-        background-color: #475569;
-        border-radius: 0.5rem;
-        padding: 1rem;
-      }
-      
-      .stat-number {
-        color: #fbbf24;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-      
-      .stat-label {
-        color: #d1d5db;
-        font-size: 0.875rem;
-      }
-      
-      .stat-description {
-        color: #9ca3af;
-        font-size: 0.75rem;
-      }
-      
-      /* Features Section */
-      .features {
-        padding: 5rem 1rem;
-        background-color: white;
-      }
-      
-      .features-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: center;
-      }
-      
-      .feature-content h2 {
-        font-size: 2.25rem;
-        font-weight: bold;
-        color: #1f2937;
-        margin-bottom: 1.5rem;
-      }
-      
-      .feature-content p {
-        font-size: 1.125rem;
-        color: #6b7280;
-        margin-bottom: 2rem;
-      }
-      
-      .feature-list {
-        list-style: none;
-      }
-      
-      .feature-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 1.5rem;
-      }
-      
-      .feature-icon {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background-color: #dbeafe;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 1rem;
-        margin-top: 0.25rem;
-        flex-shrink: 0;
-      }
-      
-      .feature-icon.green { background-color: #dcfce7; }
-      .feature-icon.purple { background-color: #f3e8ff; }
-      .feature-icon.orange { background-color: #fed7aa; }
-      
-      .feature-text h3 {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: #1f2937;
-        margin-bottom: 0.5rem;
-      }
-      
-      .feature-text p {
-        color: #6b7280;
-        font-size: 1rem;
-        margin: 0;
-      }
-      
-      .feature-placeholder {
-        background-color: #f3f4f6;
-        border-radius: 1rem;
-        padding: 2rem;
-        height: 24rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #6b7280;
-      }
-      
-      .placeholder-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      /* Remove blue outline from dashboard image */
-.dashboard-preview img {
-  outline: none !important;
-  border: none !important;
-  -webkit-tap-highlight-color: transparent;
-}
+    }
 
-/* Footer */
-      
-      /* Responsive */
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-        
-        .hero h1 {
-          font-size: 2rem;
-        }
-        
-        .features-container {
-          grid-template-columns: 1fr;
-        }
-        
-        .stats-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
+    @media (max-width: 480px) {
+      .nav-container {
+        height: 80px;
       }
+      
+      .nav-logo img {
+        height: 50px;
+      }
+      
+      .nav-right {
+        height: 80px;
+        margin-right: 4px;
+      }
+      
+      .sign-in-btn {
+        top: 24px;
+        height: 28px;
+        min-width: 60px;
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
+      }
+      
+      .mobile-nav .nav-button {
+        min-width: 45px;
+        height: 45px;
+        font-size: 0.65rem;
+      }
+    }
     </style>
-  </head>
-  
-  <body>
-  <!-- Navigation Header -->
-<!-- Navigation Header -->
-<nav style="background-color: white; padding: 0; position: fixed; top: 0; left: 0; right: 0; z-index: 50; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; height: 138px;">
-    
-    <!-- Logo -->
-    <div>
-      <img src="/images/plfm_logo_header.png" alt="Platforma" style="height: 72px; width: auto;">
-    </div>
-    
-    <!-- Center navigation buttons -->
-    <div style="display: flex; align-items: center; gap: 2rem; flex: 1; justify-content: center; margin: 0 2rem;">
-      <a href="/" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(to top, #F6762B 12%, #F79A1E 24%, #F9B813 37%, #FACF0A 50%, #FBE004 64%, #FBE901 80%, #FCED00 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Home</a>
-      
-      <a href="/about" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">About</a>
-      
-      <a href="/team" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Team</a>
-      
-      <a href="/how-it-works" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 120px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">How It Works</a>
-      
-      <a href="/blog" style="color: white; text-decoration: none; padding: 0.5rem 1.5rem; border-radius: 0.25rem; background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; min-width: 80px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);">Blog</a>
-    </div>
-    
-    <!-- Right side: Sign In button and language selector -->
-    <div style="display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 0.5rem; margin-right: 64px; height: 138px; position: relative;">
-      
-      <!-- SIGN IN BUTTON - positioned at same level as other nav buttons -->
-      <button style="background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; padding: 0.5rem 1.5rem; border-radius: 0.25rem; border: none; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all 0.2s ease; min-width: 100px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1); position: absolute; top: 49px; right: 0; white-space: nowrap;">Sign In</button>
-      
-      <!-- Language selector below Sign In -->
-      <div style="position: absolute; bottom: 10px; right: 0;">
-        <select style="background: white; color: #334155; padding: 0.2rem 1.2rem 0.2rem 0.4rem; border-radius: 1rem; border: 1px solid #e5e7eb; font-size: 0.6rem; cursor: pointer; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); appearance: none;">
-          <option value="en">🇬🇧 EN</option>
-          <option value="uk">🇺🇦 UK</option>
-          <option value="ru">🇷🇺 RU</option>
-          <option value="fr">🇫🇷 FR</option>
-          <option value="de">🇩🇪 DE</option>
-          <option value="pl">🇵🇱 PL</option>
-        </select>
-        <div style="position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: #334155; font-size: 0.5rem;">▼</div>
-      </div>
-      
-    </div>
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <nav style="background-color: white; padding: 0; position: fixed; top: 0; left: 0; right: 0; z-index: 50; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="/images/plfm_logo_header.png" alt="Platforma">
+        </div>
+        
+        <div class="nav-center">
+          <a href="/" class="nav-button active">Home</a>
+          <a href="/about" class="nav-button inactive">About</a>
+          <a href="/team" class="nav-button inactive">Team</a>
+          <a href="/how-it-works" class="nav-button inactive how-it-works">How It Works</a>
+          <a href="/blog" class="nav-button inactive">Blog</a>
+        </div>
+        
+       <div class="nav-right">
+  <div class="language-selector">
+    <select class="language-select">
+      <option value="en">🇬🇧 EN</option>
+      <option value="uk">🇺🇦 UK</option>
+      <option value="ru">🇷🇺 RU</option>
+      <option value="fr">🇫🇷 FR</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="pl">🇵🇱 PL</option>
+    </select>
+    <div class="language-arrow">▼</div>
   </div>
-</nav>
+</div>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <a href="/" class="nav-button active">Home</a>
+      <a href="/about" class="nav-button inactive">About</a>
+      <a href="/team" class="nav-button inactive">Team</a>
+      <a href="/how-it-works" class="nav-button inactive">How It Works</a>
+      <a href="/blog" class="nav-button inactive">Blog</a>
+    </div>
+
     <!-- Hero Section -->
     <section style="padding-top: 200px; padding-bottom: 80px; background: #f8f9fa; text-align: center;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
@@ -345,205 +402,243 @@ img {
       The all-in-one platform connecting nonprofits, donors, suppliers, and recipients to 
       deliver transparent & efficient humanitarian aid across Ukraine.
     </p>
-    <button style="
-      background: linear-gradient(135deg, #131B27 0%, #223046 100%); 
-      color: white; 
-      padding: 16px 32px; 
-      border: none; 
-      border-radius: 8px; 
-      font-size: 16px; 
-      font-weight: 600; 
-      cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    ">
-      Visit the App →
-    </button>
+    <a href="https://demooctober2025-platforma-app.vercel.app/" target="_blank" style="background: linear-gradient(to right, #F79A1E 0%, #F9B813 25%, #FACF0A 40%, #FBE004 60%, #FBE901 80%, #FCED00 100%); color: #1C283A; padding: 0.875rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; font-size: 1rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+      VIEW LIVE DEMO
+    </a>
   </div>
 </section>
-        
-         <!-- Dashboard Preview -->
-<div class="dashboard-preview">
-  <img 
-  src="/images/dashboard-screenshot.png" 
-  alt="Platforma Humanitarian Logistics Hub Dashboard"
-  style="width: 100%; max-width: 1152px; height: auto; margin: 0 auto; display: block; outline: none; border: none;"
-/>
-    </section>
-<!-- Complete User Journey Sections -->
+            
+    <!-- Dashboard Preview -->
+    <div class="dashboard-preview">
+      <img 
+      src="/images/dashboard-screenshot.png" 
+      alt="Platforma Humanitarian Logistics Hub Dashboard"
+      style="width: 100%; max-width: 1152px; height: auto; margin: 0 auto; display: block; outline: none; border: none;"
+    />
+    </div>
 
-<!-- NONPROFITS Section -->
-<!-- User Journey Section 1: Nonprofits -->
-<section style="padding: 80px 0; background: white;">
+    <!-- NONPROFITS Section -->
+    <section style="padding: 80px 0; background: white;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
       <div>
-        <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 24px; color: #1a1a1a;">
-          For Nonprofits: Manage Aid Distribution
-        </h2>
-        <p style="font-size: 18px; color: #666; margin-bottom: 32px; line-height: 1.6;">
-          Coordinate relief efforts, track inventory, and manage distribution points across Ukraine with our comprehensive nonprofit dashboard.
-        </p>
-        
-        <div style="space-y: 24px;">
-          <div style="display: flex; align-items: start; margin-bottom: 20px;">
-            <div style="background: #e8f5e8; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 16px; margin-top: 4px; flex-shrink: 0;">
-              <span style="color: #2d7d32; font-weight: bold;">✓</span>
-            </div>
-            <div>
-              <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #1a1a1a;">Real-time Inventory Tracking</h3>
-              <p style="color: #666; margin: 0;">Monitor supplies across all distribution centers</p>
+  <div style="color: #3B82F6; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">NONPROFITS & VOLUNTEERS </div>
+  <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 24px; color: #1a1a1a;">
+    Complete Supply Chain Management from Procurement to Delivery 
+  </h2>
+            <p style="font-size: 18px; color: #666; margin-bottom: 32px; line-height: 1.6;">
+Transform your organization's efficiency with unified resource catalogs, automated coordination, and professional reporting tools designed for humanitarian work.            </p>
+            
+           <div style="space-y: 24px;">
+  <div style="display: flex; align-items: start; margin-bottom: 20px;">
+    <div style="background: #1F2937; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; margin-right: 16px; margin-top: 4px; flex-shrink: 0;">
+      <img src="images/Catalogs_1.png" alt="Catalogs" style="width: 32px; height: 32px; object-fit: contain;">
+    </div>
+    <div>
+                  <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #1a1a1a;">Unified Resource Catalogs
+</h3>
+                  <p style="color: #666; margin: 0;">Access consolidated inventory across all suppliers and partners, eliminating duplicate procurement efforts</p>
+                </div>
+              </div>
+              
+              <div style="display: flex; align-items: start; margin-bottom: 20px;">
+  <div style="background: #1F2937; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; margin-right: 16px; margin-top: 4px; flex-shrink: 0;">
+    <img src="images/reqq 1321315276.png" alt="Request" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+                  <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #1a1a1a;">Automated Request Processing</h3>
+                  <p style="color: #666; margin: 0;">One-click approval workflows for recipient requests with attached comments and streamlined coordination</p>
+                </div>
+              </div>
+<!-- Professional Reporting Tools -->
+<div style="display: flex; align-items: start; margin-bottom: 20px;">
+  <div style="background: #1F2937; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; margin-right: 16px; margin-top: 4px; flex-shrink: 0;">
+    <img src="images/report_1.png" alt="Reports" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Professional Reporting Tools</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Volunteer-friendly analytics, donor impact reports, and quarterly documentation for accountability</p>
+  </div>
+</div>
+
+<!-- End-to-End Logistics Tracking -->
+<div style="display: flex; align-items: start; margin-bottom: 20px;">
+  <div style="background: #1F2937; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; margin-right: 16px; margin-top: 4px; flex-shrink: 0;">
+    <img src="images/tracc 1321315277.png" alt="Logistics Tracking" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">End-to-End Logistics Tracking</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Monitor inbound shipments from suppliers and outbound deliveries to recipients with real-time status updates</p>
+  </div>
+</div>
+
             </div>
           </div>
           
-          <div style="display: flex; align-items: start; margin-bottom: 20px;">
-            <div style="background: #e8f5e8; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 16px; margin-top: 4px; flex-shrink: 0;">
-              <span style="color: #2d7d32; font-weight: bold;">✓</span>
-            </div>
-            <div>
-              <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #1a1a1a;">Distribution Management</h3>
-              <p style="color: #666; margin: 0;">Organize and coordinate aid delivery efficiently</p>
-            </div>
+          <div style="text-align: center;">
+            <img src="/images/dashboard_nonprofit_lp_image.png" alt="Nonprofit Dashboard" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
           </div>
         </div>
       </div>
-      
-      <div style="text-align: center;">
-        <img src="/images/dashboard_nonprofit_lp_image.png" alt="Nonprofit Dashboard" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
-      </div>
-    </div>
-  </div>
-</section>s
+    </section>
 
-<!-- RECIPIENTS Section -->
-<section style="padding: 5rem 0; background-color: #F8FAFC;">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      
-      <!-- Left side: Dashboard Image -->
-      <div>
-        <img 
-          src="/images/dashboard_recipient_lp_image.png" 
-          alt="Recipients Mobile App" 
-          style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);"
-        />
-      </div>
-      
-      <!-- Right side: Content -->
-      <div>
-        <div style="color: #8B5CF6; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">RECIPIENTS</div>
-        <h2 style="font-size: 2.5rem; font-weight: bold; color: #1F2937; margin-bottom: 1.5rem; line-height: 1.2;">
-          Request Aid Supplies Efficiently
-        </h2>
-        <p style="font-size: 1.125rem; color: #6B7280; margin-bottom: 2rem; line-height: 1.6;">
-          Connect with humanitarian organizations and track your essential supply requests.
-        </p>
-        
-        <div style="space-y: 1.5rem;">
-          <!-- Easy Request Process -->
-          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #DBEAFE; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-              <span style="font-size: 12px;">📱</span>
-            </div>
-            <div>
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Easy Request Process</h3>
-              <p style="color: #6B7280; font-size: 1rem; margin: 0;">Browse catalogs and request needed supplies in minutes.</p>
+    <!-- RECIPIENTS Section -->
+    <section style="padding: 5rem 0; background-color: #F8FAFC;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          
+          <!-- Left side: Dashboard Image -->
+          <div>
+            <img 
+              src="/images/dashboard_recipient_lp_image.png" 
+              alt="Recipients Mobile App" 
+              style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);"
+            />
+          </div>
+          
+          <!-- Right side: Content -->
+          <div>
+            <div style="color: #3B82F6; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">RECIPIENTS</div>
+            <h2 style="font-size: 2.5rem; font-weight: bold; color: #1F2937; margin-bottom: 1.5rem; line-height: 1.2;">
+              Direct Communication Channel for Urgent Needs
+            </h2>
+            <p style="font-size: 1.125rem; color: #6B7280; margin-bottom: 2rem; line-height: 1.6;">
+Express your requirements directly to aid providers with real-time tracking and transparent processes from request to delivery.            </p>
+            
+            <div style="space-y: 1.5rem;">
+              <!-- Easy Request Process -->
+              <!-- Digital Wishlist Creation -->
+<div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/wish 1321315278.png" alt="Digital Wishlist" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Digital Wishlist Creation</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Create and share urgent needs lists with quantities and priorities directly with verified organizations.</p>
+  </div>
+</div>
+              
+              <!-- Real-Time Tracking -->
+             <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/tracc 1321315277.png" alt="Delivery Tracking" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Real-Time Delivery Tracking</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Follow your requests from approval to delivery with map view and status updates.</p>
+  </div>
+</div>
+              
+              <!-- Public Wishlists -->
+<!-- Direct Communication Channels -->
+<div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/mess 1321315279.png" alt="Communication" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Direct Communication Channels</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Connect directly with aid providers without intermediaries for faster coordination.</p>
+  </div>
+</div>
+              <!-- Multi-Organization Requests -->
+<!-- Multi-Organization Requests -->
+<div style="display: flex; align-items: flex-start;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/reqq 1321315276.png" alt="Multi-Organization Requests" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Multi-Organization Requests</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Submit requests to multiple nonprofits simultaneously to maximize chances of fulfillment.</p>
+  </div>
+</div>
             </div>
           </div>
           
-          <!-- Real-Time Tracking -->
-          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #DCFCE7; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-              <span style="font-size: 12px;">🔍</span>
-            </div>
-            <div>
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Real-Time Tracking</h3>
-              <p style="color: #6B7280; font-size: 1rem; margin: 0;">Monitor your requests from submission to delivery.</p>
-            </div>
-          </div>
-          
-          <!-- Public Wishlists -->
-          <div style="display: flex; align-items: flex-start;">
-            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #F3E8FF; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-              <span style="font-size: 12px;">📝</span>
-            </div>
-            <div>
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Public Wishlists</h3>
-              <p style="color: #6B7280; font-size: 1rem; margin: 0;">Share your needs with the humanitarian community.</p>
-            </div>
-          </div>
         </div>
       </div>
-      
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- DONORS Section -->
-<section style="padding: 5rem 0; background-color: white;">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      
-      <!-- Left side: Content -->
-      <div>
-        <div style="color: #8B5CF6; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">DONORS</div>
-        <h2 style="font-size: 2.5rem; font-weight: bold; color: #1F2937; margin-bottom: 1.5rem; line-height: 1.2;">
-          See Your Impact in Real-Time
-        </h2>
-        <p style="font-size: 1.125rem; color: #6B7280; margin-bottom: 2rem; line-height: 1.6;">
-          Track every donation and witness the difference you're making in Ukrainian communities.
-        </p>
-        
-        <div style="space-y: 1.5rem;">
-          <!-- Direct Impact Tracking -->
-          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #DBEAFE; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-              <span style="font-size: 12px;">🎯</span>
+    <!-- DONORS Section -->
+    <section style="padding: 5rem 0; background-color: white;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          
+          <!-- Left side: Content -->
+          <div>
+            <div style="color: #3B82F6; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">DONORS</div>
+            <h2 style="font-size: 2.5rem; font-weight: bold; color: #1F2937; margin-bottom: 1.5rem; line-height: 1.2;">
+              Complete Transparency from Donation to Delivery 
+            </h2>
+            <p style="font-size: 1.125rem; color: #6B7280; margin-bottom: 2rem; line-height: 1.6;">
+Experience unprecedented visibility into your humanitarian impact with real-time tracking and verified outcomes.            </p>
+            
+            <div style="space-y: 1.5rem;">
+             <!-- Full Transparency Dashboard -->
+<div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/tran 1321315280.png" alt="Transparency Dashboard" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Full Transparency Dashboard</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Track financial contributions and in-kind donations with complete audit trails from donation to delivery</p>
+  </div>
+</div>
+              
+              <!-- In-Kind Donations -->
+<!-- Real-Time Impact Verification -->
+<div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/pic 1321315282.png" alt="Impact Verification" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Real-Time Impact Verification</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Access photo documentation, delivery confirmations, and impact reports showing exactly how your support creates change</p>
+  </div>
+</div>
+
+              
+              
+              <!-- Verified Recipients -->
+              <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/check321315283.png" alt="Vetted Organizations" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Vetted Organization Directory</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Connect directly with verified, high-impact humanitarian organizations with proven track records and performance metrics</p>
+  </div>
+</div>
+
+              <!-- Tax Documentation & Reports -->
+<!-- Tax Documentation & Reports -->
+<div style="display: flex; align-items: flex-start; margin-top: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/Catalogs_1.png" alt="Tax Documentation" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Tax Documentation & Reports</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Automated receipt generation and financial reports for seamless tax documentation and donor accountability</p>
+  </div>
+</div>
             </div>
-            <div>
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Direct Impact Tracking</h3>
-              <p style="color: #6B7280; font-size: 1rem; margin: 0;">Follow your donations from contribution to delivery</p>
-            </div>
+          </div>
+
+          
+          
+          <!-- Right side: Dashboard Image -->
+          <div>
+            <img 
+              src="/images/dashboard_donor_lp_image.png" 
+              alt="Donor Mobile App" 
+              style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);"
+            />
           </div>
           
-          <!-- In-Kind Donations -->
-          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #DCFCE7; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-              <span style="font-size: 12px;">🤝</span>
-            </div>
-            <div>
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">In-Kind Donations</h3>
-              <p style="color: #6B7280; font-size: 1rem; margin: 0;">Share medical equipment, supplies, and resources directly</p>
-            </div>
-          </div>
-          
-          <!-- Verified Recipients -->
-          <div style="display: flex; align-items: flex-start;">
-            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #F3E8FF; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-              <span style="font-size: 12px;">✓</span>
-            </div>
-            <div>
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Verified Recipients</h3>
-              <p style="color: #6B7280; font-size: 1rem; margin: 0;">Support vetted organizations and individuals in need</p>
-            </div>
-          </div>
         </div>
       </div>
-      
-      <!-- Right side: Dashboard Image -->
-      <div>
-        <img 
-          src="/images/dashboard_donor_lp_image.png" 
-          alt="Donor Mobile App" 
-          style="width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);"
-        />
-      </div>
-      
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- SUPPLIERS Section -->
+    <!-- SUPPLIERS Section -->
 <section style="padding: 5rem 0; background-color: #F8FAFC;">
   <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
@@ -559,66 +654,68 @@ img {
       
       <!-- Right side: Content -->
       <div>
-        <div style="color: #8B5CF6; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">SUPPLIERS</div>
+        <div style="color: #3B82F6; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">SUPPLIERS</div>
         <h2 style="font-size: 2.5rem; font-weight: bold; color: #1F2937; margin-bottom: 1.5rem; line-height: 1.2;">
-          Connect with Humanitarian Organizations
+          Direct Marketplace Access to Verified Buyers 
         </h2>
         <p style="font-size: 1.125rem; color: #6B7280; margin-bottom: 2rem; line-height: 1.6;">
-          Reach nonprofits and aid organizations that need your medical supplies and equipment.
-        </p>
+Connect with legitimate humanitarian organizations through a transparent, streamlined marketplace that eliminates barriers and ensures reliable transactions.        </p>
         
         <div style="space-y: 1.5rem;">
           <!-- Targeted Marketplace -->
-          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #DBEAFE; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-              <span style="font-size: 12px;">🎯</span>
-            </div>
-            <div>
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Targeted Marketplace</h3>
-              <p style="color: #6B7280; font-size: 1rem; margin: 0;">Connect directly with humanitarian organizations.</p>
-            </div>
-          </div>
+          <!-- Premium Marketplace Access -->
+<div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/vet 1321315283.png" alt="Premium Marketplace" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Premium Marketplace Access</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Reach pre-qualified buyers including verified nonprofits, medical professionals, and humanitarian organizations</p>
+  </div>
+</div>
           
           <!-- Verified Buyers -->
-          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #DCFCE7; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-              <span style="font-size: 12px;">✓</span>
-            </div>
-            <div>
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Verified Buyers</h3>
-              <p style="color: #6B7280; font-size: 1rem; margin: 0;">Work with established nonprofits and aid agencies.</p>
-            </div>
-          </div>
+          <!-- Streamlined Payment Processing -->
+<div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/paym 1321315287.png" alt="Payment Processing" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Streamlined Payment Processing</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Automated order processing and secure payment systems that eliminate communication barriers and delays</p>
+  </div>
+</div>
           
           <!-- Bulk Orders -->
-          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #F3E8FF; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-              <span style="font-size: 12px;">📦</span>
-            </div>
-            <div>
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Bulk Orders</h3>
-              <p style="color: #6B7280; font-size: 1rem; margin: 0;">Fulfill large-scale orders for emergency response.</p>
-            </div>
-          </div>
+          <!-- Quality Verification Tools -->
+<div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/Complete Transparency  1321315241.png" alt="Quality Verification" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Quality Verification Tools</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">Upload certifications, invoices, and regulatory compliance documents ensuring legitimate transactions</p>
+  </div>
+</div>
           
           <!-- Performance Insights -->
-          <div style="display: flex; align-items: flex-start;">
-            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #FED7AA; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
-              <span style="font-size: 12px;">📊</span>
-            </div>
-            <div>
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Performance Insights</h3>
-              <p style="color: #6B7280; font-size: 1rem; margin: 0;">Track catalog views, inquiries, and sales analytics</p>
-            </div>
-          </div>
+         <!-- Platform Analytics -->
+<div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #1F2937; display: flex; align-items: center; justify-content: center; margin-right: 1rem; margin-top: 0.25rem; flex-shrink: 0;">
+    <img src="images/report_1.png" alt="Platform Analytics" style="width: 32px; height: 32px; object-fit: contain;">
+  </div>
+  <div>
+    <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin-bottom: 0.5rem;">Platform Analytics</h3>
+    <p style="color: #6B7280; font-size: 1rem; margin: 0;">View most clicked/opened catalog items (anonymized data)</p>
+  </div>
+</div>
         </div>
       </div>
-      
     </div>
   </div>
 </section>
-    </section>
-    <!-- How Platforma Connects Section -->
+
+<!-- How Platforma Connects Section -->
 <section style="background: #F8FAFC; padding: 5rem 0;">
   <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
     <!-- Header -->
@@ -630,102 +727,306 @@ img {
         See how our platform creates a seamless ecosystem where every participant contributes to delivering aid efficiently
       </p>
     </div>
-
-    <!-- Main Content Container -->
-  <!-- Main Content Container -->
-<div style="background: transparent; border-radius: 1.5rem; padding: 0; text-align: center;">
-  
-  <!-- Ecosystem Flow Diagram -->
-  <img 
-    src="/images/ecosystem-flow-diagram.png" 
-    alt="Platforma Ecosystem Flow Diagram" 
-    style="width: 100%; max-width: 900px; height: auto; margin: 0 auto;"
-  />
+    <!-- Ecosystem Flow Diagram -->
+    <div style="background: transparent; border-radius: 1.5rem; padding: 0; text-align: center;">
+    <img src="/images/ecosystem-flow-diagram.png" alt="Platforma Ecosystem Flow Diagram" style="width: 100%; max-width: 900px; height: auto; margin: 0 auto; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); border-radius: 1rem;">
 </div>
-  </div>
 </section>
-    <!-- Support the Project Section -->
+
 <!-- Support the Project Section -->
 <section style="background: #F8FAFC; padding: 5rem 0;">
   <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-    <div style="background: white; border-radius: 1rem; padding: 4rem 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
+    <div style="background: linear-gradient(135deg, #CBD5E1 0%, #F1F5F9 50%, #FFFFFF 100%); border-radius: 1rem; padding: 4rem 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
       <h2 style="color: #1F2937; font-size: 2.5rem; font-weight: bold; line-height: 1.2; margin-bottom: 1.5rem;">
         Support the project here
       </h2>
-      
       <p style="color: #6B7280; font-size: 1.125rem; line-height: 1.6; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
         You will help us to build a tool for hundreds of nonprofits!
       </p>
-      
       <p style="color: #6B7280; font-size: 1rem; line-height: 1.6; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
         For now but, all the people working on this project are volunteers! Your contributions will help us cover essential operating costs during our critical launch phase while we secure long-term funding. We're committed to full transparency with regular progress updates and detailed expense breakdowns. Early supporters will receive exclusive access and perks once the MVP launches.
       </p>
-      
       <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-       <a href="https://buymeacoffee.com/platformaapp" target="_blank" style="background: linear-gradient(to right, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; padding: 0.875rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; font-size: 1rem; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(34, 48, 70, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1)';">
-  Buy Me A Coffee
-</a>
-        
-        <a href="https://www.paypal.com/ncp/payment/4UWK5J9MXXNLJ" target="_blank" style="background: linear-gradient(to right, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; padding: 0.875rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; font-size: 1rem; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(34, 48, 70, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1)';">
-  PayPal
-</a>
-        
-        <a href="https://www.gofundme.com/f/platforma-needs-your-support-fuel-our-mvp-launch" target="_blank" style="background: linear-gradient(to right, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; padding: 0.875rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; font-size: 1rem; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(34, 48, 70, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1)';">
-  GoFundMe
-</a>
+        <a href="https://buymeacoffee.com/platformaapp" target="_blank" style="background: linear-gradient(to right, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; padding: 0.875rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; font-size: 1rem;">
+          Buy Me A Coffee
+        </a>
+        <a href="https://www.paypal.com/ncp/payment/4UWK5J9MXXNLJ" target="_blank" style="background: linear-gradient(to right, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; padding: 0.875rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; font-size: 1rem;">
+          PayPal
+        </a>
+        <a href="https://www.gofundme.com/f/platforma-needs-your-support-fuel-our-mvp-launch" target="_blank" style="background: linear-gradient(to right, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); color: white; padding: 0.875rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; font-size: 1rem;">
+          GoFundMe
+        </a>
       </div>
     </div>
   </div>
 </section>
-<!-- Newsletter Section -->
+
 <!-- Newsletter Section -->
 <section style="background: #f8f9fa; padding: 5rem 0; text-align: center;">
   <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-    <div style="background: #1E293B; border-radius: 1rem; padding: 5rem 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+    <div style="background: linear-gradient(to right, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%); padding: 5rem 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); border-radius: 1rem;">
       <h2 style="color: white; font-size: 2.5rem; font-weight: bold; line-height: 1.2; margin-bottom: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
         Join our community working to make aid delivery more effective!
       </h2>
       <p style="color: #94A3B8; font-size: 1.125rem; line-height: 1.6; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
         Stay connected with Platforma updates on humanitarian aid innovation, practical tips for nonprofits, and stories from the field.
       </p>
-      <a href="#newsletter" style="background: linear-gradient(to top, #F6762B 12%, #F79A1E 24%, #F9B813 37%, #FACF0A 50%, #FBE004 64%, #FBE901 80%, #FCED00 100%); color: #1C283A; padding: 0.875rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; font-size: 1rem; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(246, 118, 43, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+      
+      <!-- Newsletter Button - Opens Modal -->
+      <button id="openNewsletterModal" style="background: linear-gradient(to right, #F79A1E 0%, #F9B813 25%, #FACF0A 40%, #FBE004 60%, #FBE901 80%, #FCED00 100%); color: #1C283A; padding: 0.875rem 2rem; border-radius: 0.5rem; font-weight: 600; border: none; cursor: pointer; font-size: 1rem; font-family: 'Noto Sans', sans-serif; transition: transform 0.2s ease;">
         NEWSLETTER
-      </a>
+      </button>
     </div>
   </div>
 </section>
-<footer style="background: #F8FAFC; padding: 3rem 0;">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-<div style="background: white; border-radius: 1rem; padding: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center; position: relative;">
-      <img src="/images/plfm_footer.png" alt="Platforma Footer" style="width: 100%; max-width: 1200px; height: auto;" />
+
+<!-- Modal Overlay -->
+<div id="newsletterModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center;">
+  
+  <!-- Modal Content -->
+  <div style="background: white; border-radius: 1rem; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);">
+    
+    <!-- Close Button -->
+    <button id="closeNewsletterModal" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #6B7280; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background-color 0.2s ease;">
+      ✕
+    </button>
+    
+    <!-- Modal Header with Logo -->
+    <div style="padding: 2rem 2rem 1rem 2rem; text-align: center; border-bottom: 1px solid #E5E7EB;">
+      <!-- Platforma Logo -->
+      <img src="/images/plfm_logo_header.png" alt="Platforma" style="height: 60px; width: auto; margin-bottom: 1.5rem;">
       
-      <!-- Clickable links positioned to match your footer image -->
-      
-      <!-- About link (Company column) -->
-      <a href="/about" style="position: absolute; top: 32%; left: 42%; color: transparent; text-decoration: none; font-size: 0.875rem; width: 4%; height: 8%;" title="About"></a>
-      
-      <!-- Privacy Policy link (Legal column) -->
-      <a href="/privacy" style="position: absolute; top: 32%; left: 58%; color: transparent; text-decoration: none; font-size: 0.875rem; width: 8%; height: 8%;" title="Privacy Policy"></a>
-      
-      <!-- Terms & Conditions link (Legal column) -->
-      <a href="/terms" style="position: absolute; top: 48%; left: 58%; color: transparent; text-decoration: none; font-size: 0.875rem; width: 10%; height: 8%;" title="Terms & Conditions"></a>
-      
-      <!-- Blog link (Resources column) -->
-      <a href="/blog" style="position: absolute; top: 32%; left: 73%; color: transparent; text-decoration: none; font-size: 0.875rem; width: 3%; height: 8%;" title="Blog"></a>
-      
-      <!-- Social Media Links (Community column) -->
-      <!-- X/Twitter -->
-<a href="https://x.com/platforma_app" target="_blank" style="position: absolute; top: 32%; left: 92%; color: transparent; text-decoration: none; font-size: 0.875rem; width: 4%; height: 8%;" title="X (Twitter)"></a>      
-      <!-- Instagram -->
-<a href="https://www.instagram.com/platforma.app/" target="_blank" style="position: absolute; top: 42%; left: 92%; color: transparent; text-decoration: none; font-size: 0.875rem; width: 4%; height: 8%;" title="Instagram"></a>      
-      <!-- Facebook -->
-<!-- Facebook -->
-<a href="https://www.facebook.com/people/Platforma-App/61575712740618/?_rdr" target="_blank" style="position: absolute; top: 52%; left: 92%; color: transparent; text-decoration: none; font-size: 0.875rem; width: 4%; height: 8%;" title="Facebook"></a>      
-      <!-- LinkedIn -->
-<a href="https://www.linkedin.com/company/platforma-app/?viewAsMember=true" target="_blank" style="position: absolute; top: 62%; left: 92%; color: transparent; text-decoration: none; font-size: 0.875rem; width: 4%; height: 8%;" title="LinkedIn"></a>      
-      <!-- Bluesky -->
-<!-- Bluesky -->
-<a href="https://bsky.app/profile/platformaapp.com" target="_blank" style="position: absolute; top: 72%; left: 92%; color: transparent; text-decoration: none; font-size: 0.875rem; width: 4%; height: 8%;" title="Bluesky"></a>
+      <h3 style="color: #1C283A; font-size: 1.75rem; font-weight: bold; margin: 0; font-family: 'Noto Sans', sans-serif;">
+        Join Our Newsletter
+      </h3>
+      <p style="color: #6B7280; font-size: 1rem; margin: 0.5rem 0 0 0; font-family: 'Noto Sans', sans-serif;">
+        Stay updated with humanitarian aid innovation
+      </p>
+    </div>
+    
+    <!-- HubSpot Form Container -->
+    <div style="padding: 2rem;">
+      <div class="hs-form-frame" data-region="eu1" data-form-id="49e1ebc0-ff86-4c3b-bab6-a2c3e2dc5f78" data-portal-id="146591468"></div>
     </div>
   </div>
-</footer>
+</div>
+
+<!-- HubSpot Form Script -->
+<script src="https://js-eu1.hsforms.net/forms/embed/146591468.js" defer></script>
+
+<!-- Modal JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('newsletterModal');
+  const openBtn = document.getElementById('openNewsletterModal');
+  const closeBtn = document.getElementById('closeNewsletterModal');
+  
+  // Open modal
+  openBtn.addEventListener('click', function() {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  });
+  
+  // Close modal
+  closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  });
+  
+  // Close modal when clicking outside
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+  
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.display === 'flex') {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+  
+  // Button hover effect
+  openBtn.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-1px)';
+  });
+  
+  openBtn.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0)';
+  });
+  
+  // Close button hover effect
+  closeBtn.addEventListener('mouseenter', function() {
+    this.style.backgroundColor = '#F3F4F6';
+  });
+  
+  closeBtn.addEventListener('mouseleave', function() {
+    this.style.backgroundColor = 'transparent';
+  });
+});
+</script>
+
+<!-- Custom styling for HubSpot form in modal -->
+<style>
+  /* Style the HubSpot form to match your design system */
+  .hs-form-frame .hs-form {
+    background: transparent !important;
+  }
+  
+  /* Hide HubSpot branding/logo */
+  .hs-form-frame .hs-form .hs_company_logo,
+  .hs-form-frame .hs-form .hs-richtext,
+  .hs-form-frame .hs-form .hs_company_name,
+  .hs-form-frame .hs-form img {
+    display: none !important;
+  }
+  
+  .hs-form-frame .hs-form .hs-input {
+    background: white !important;
+    border: 2px solid #E5E7EB !important;
+    border-radius: 0.5rem !important;
+    padding: 0.875rem 1rem !important;
+    font-family: 'Noto Sans', sans-serif !important;
+    font-size: 1rem !important;
+    color: #1C283A !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: border-color 0.2s ease !important;
+  }
+  
+  .hs-form-frame .hs-form .hs-input:focus {
+    outline: none !important;
+    border-color: #F79A1E !important;
+    box-shadow: 0 0 0 3px rgba(247, 154, 30, 0.1) !important;
+  }
+  
+  .hs-form-frame .hs-form .hs-button {
+    background: linear-gradient(to right, #F79A1E 0%, #F9B813 25%, #FACF0A 40%, #FBE004 60%, #FBE901 80%, #FCED00 100%) !important;
+    color: #1C283A !important;
+    border: none !important;
+    padding: 0.875rem 2rem !important;
+    border-radius: 0.5rem !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    font-family: 'Noto Sans', sans-serif !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+  }
+  
+  .hs-form-frame .hs-form .hs-button:hover {
+    transform: translateY(-1px) !important;
+  }
+  
+  .hs-form-frame .hs-form .hs-fieldtype-text label {
+    color: #1C283A !important;
+    font-family: 'Noto Sans', sans-serif !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .hs-form-frame .hs-form .hs-error-msgs {
+    color: #EF4444 !important;
+    font-family: 'Noto Sans', sans-serif !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Responsive modal adjustments */
+  @media (max-width: 768px) {
+    .hs-form-frame .hs-form .hs-input {
+      font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+    
+    #newsletterModal > div {
+      margin: 1rem;
+      width: calc(100% - 2rem);
+    }
+  }
+</style>
+</section>
+
+  <!-- Footer -->
+  <footer style="padding: 3rem 0; background-color: white; border-top: 1px solid #E5E7EB;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        
+       <!-- Company Info -->
+<div>
+  <img src="/images/plfm_logo_header.png" alt="Platforma Logo" style="height: 40px; width: auto; margin-bottom: 1rem;">
+  <p style="color: #6B7280; margin: 0 0 1rem 0; line-height: 1.6;">
+    Streamlining humanitarian aid delivery across Ukraine through transparent coordination and efficient logistics.
+  </p>
+  <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+    <a href="https://x.com/platforma_app" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/x.svg" alt="X" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.instagram.com/platforma.app/" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/instagram.svg" alt="Instagram" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.linkedin.com/company/platforma-app/?viewAsMember=true" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/linkedin.svg" alt="LinkedIn" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.threads.com/@platforma.app" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/threads.svg" alt="Threads" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://bsky.app/profile/platformaapp.com" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/bluesky.svg" alt="Bluesky" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://www.tiktok.com/@platforma_app" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      <img src="/tiktok.svg" alt="TikTok" style="width: 24px; height: 24px;">
+    </a>
+  </div>
+</div>
+        
+        <!-- Platform Links -->
+        <div>
+          <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Platform</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/how-it-works" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">How It Works</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/nonprofits" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Nonprofits</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/donors" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Donors</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/suppliers" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Suppliers</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/recipients" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">For Recipients</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company Links -->
+        <div>
+          <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Company</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">About</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/team" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Team</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/blog" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Blog</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Support Links -->
+        <div>
+          <h3 style="font-size: 1.125rem; font-weight: 600; color: #1F2937; margin: 0 0 1rem 0;">Support</h3>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="/help" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Help Center</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/privacy" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/terms" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Terms of Service</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/security" style="color: #6B7280; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1F2937'" onmouseout="this.style.color='#6B7280'">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Copyright -->
+      <div style="border-top: 1px solid #E5E7EB; padding-top: 2rem; text-align: center;">
+        <p style="color: #94A3B8; margin: 0; font-size: 0.875rem;">
+          © 2025 Platforma. All rights reserved. Built with determination to transform humanitarian aid.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>     

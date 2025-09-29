@@ -1,0 +1,279 @@
+---
+// Platforma App - Survey Hub Page
+const pageTitle = "Help Us Improve - Platforma";
+const pageDescription = "Share your feedback to help us build better features for the humanitarian aid community.";
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+    /* Universal reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background-color: #f8fafc;
+    }
+
+    img {
+      outline: none;
+      border: none;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Simple Header with Logo -->
+    <header style="background-color: white; padding: 2rem 0; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem; text-align: center;">
+        <img src="/images/plfm_logo_header.png" alt="Platforma" style="height: 60px; width: auto;">
+      </div>
+    </header>
+
+    <!-- Survey Hub Content -->
+    <section style="background: white; padding: 4rem 0; min-height: 80vh;">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 0 1rem;">
+        
+        <!-- Header -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">💬</div>
+          <h1 style="color: #1F2937; font-size: 2.5rem; font-weight: bold; margin: 0 0 1rem 0; font-family: 'Noto Sans', sans-serif;">
+            Help Us Improve Platforma
+          </h1>
+          <p style="color: #6B7280; font-size: 1.125rem; line-height: 1.6; max-width: 700px; margin: 0 auto; font-family: 'Noto Sans', sans-serif;">
+            Your feedback is invaluable to us. Share your thoughts and help us build better features for the humanitarian aid community.
+          </p>
+        </div>
+
+        <!-- Survey Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+          
+          <!-- Donor Survey Card -->
+          <div id="donorSurveyCard" style="background: linear-gradient(to bottom, #f1f5f9 0%, #ffffff 100%); border-radius: 1rem; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+            <div style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 2.5rem;">
+              💙
+            </div>
+            <h3 style="color: #1F2937; font-size: 1.5rem; font-weight: bold; margin: 0 0 1rem 0; font-family: 'Noto Sans', sans-serif;">
+              Donor Survey
+            </h3>
+            <p style="color: #6B7280; font-size: 1rem; line-height: 1.6; margin: 0 0 1.5rem 0; font-family: 'Noto Sans', sans-serif;">
+              Share your experience as a donor and help us improve how you support humanitarian causes.
+            </p>
+            <div style="background: linear-gradient(to right, #F79A1E 0%, #F9B813 25%, #FACF0A 40%, #FBE004 60%, #FBE901 80%, #FCED00 100%); color: #1C283A; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; display: inline-block; font-size: 0.875rem; font-family: 'Noto Sans', sans-serif;">
+              Take Survey
+            </div>
+          </div>
+
+          <!-- Nonprofit Survey Card -->
+          <div id="nonprofitSurveyCard" style="background: linear-gradient(to bottom, #f1f5f9 0%, #ffffff 100%); border-radius: 1rem; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+            <div style="background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 2.5rem;">
+              🤝
+            </div>
+            <h3 style="color: #1F2937; font-size: 1.5rem; font-weight: bold; margin: 0 0 1rem 0; font-family: 'Noto Sans', sans-serif;">
+              Nonprofit Survey
+            </h3>
+            <p style="color: #6B7280; font-size: 1rem; line-height: 1.6; margin: 0 0 1.5rem 0; font-family: 'Noto Sans', sans-serif;">
+              Tell us about your needs as a nonprofit organization and how we can better serve you.
+            </p>
+            <div style="background: linear-gradient(to right, #F79A1E 0%, #F9B813 25%, #FACF0A 40%, #FBE004 60%, #FBE901 80%, #FCED00 100%); color: #1C283A; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; display: inline-block; font-size: 0.875rem; font-family: 'Noto Sans', sans-serif;">
+              Take Survey
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Donor Survey Modal -->
+    <div id="donorSurveyModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; overflow-y: auto; padding: 2rem 0;">
+      
+      <!-- Modal Content -->
+      <div style="background: white; border-radius: 1rem; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); margin: auto;">
+        
+        <!-- Close Button -->
+        <button id="closeDonorModal" style="position: absolute; top: 1rem; right: 1rem; background: white; border: none; font-size: 1.5rem; cursor: pointer; color: #6B7280; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background-color 0.2s ease; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          ✕
+        </button>
+        
+        <!-- Modal Header -->
+        <div style="padding: 2rem 2rem 1rem 2rem; text-align: center; border-bottom: 1px solid #E5E7EB;">
+          <img src="/images/plfm_logo_header.png" alt="Platforma" style="height: 50px; width: auto; margin-bottom: 1rem;">
+          
+          <h3 style="color: #1C283A; font-size: 1.5rem; font-weight: bold; margin: 0; font-family: 'Noto Sans', sans-serif;">
+            Donor Survey
+          </h3>
+          <p style="color: #6B7280; font-size: 0.875rem; margin: 0.5rem 0 0 0; font-family: 'Noto Sans', sans-serif;">
+            Your feedback helps us improve the donor experience
+          </p>
+        </div>
+        
+        <!-- Jotform Container for Donors -->
+        <div style="padding: 2rem;">
+<script type="text/javascript" src="https://form.jotform.com/jsform/252713481774361"></script>          <div style="text-align: center; color: #6B7280; padding: 3rem 1rem;">
+            <p style="font-family: 'Noto Sans', sans-serif; font-size: 1rem;">
+              Paste your Donor Jotform embed code here.
+            </p>
+            <p style="font-family: 'Noto Sans', sans-serif; font-size: 0.875rem; margin-top: 0.5rem;">
+              Configure Jotform to redirect to: https://yoursite.com/
+            </p>
+          </div>
+          <!-- END DONOR JOTFORM EMBED CODE -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Nonprofit Survey Modal -->
+    <div id="nonprofitSurveyModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; overflow-y: auto; padding: 2rem 0;">
+      
+      <!-- Modal Content -->
+      <div style="background: white; border-radius: 1rem; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); margin: auto;">
+        
+        <!-- Close Button -->
+        <button id="closeNonprofitModal" style="position: absolute; top: 1rem; right: 1rem; background: white; border: none; font-size: 1.5rem; cursor: pointer; color: #6B7280; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background-color 0.2s ease; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          ✕
+        </button>
+        
+        <!-- Modal Header -->
+        <div style="padding: 2rem 2rem 1rem 2rem; text-align: center; border-bottom: 1px solid #E5E7EB;">
+          <img src="/images/plfm_logo_header.png" alt="Platforma" style="height: 50px; width: auto; margin-bottom: 1rem;">
+          
+          <h3 style="color: #1C283A; font-size: 1.5rem; font-weight: bold; margin: 0; font-family: 'Noto Sans', sans-serif;">
+            Nonprofit Survey
+          </h3>
+          <p style="color: #6B7280; font-size: 0.875rem; margin: 0.5rem 0 0 0; font-family: 'Noto Sans', sans-serif;">
+            Help us understand your organization's needs better
+          </p>
+        </div>
+        
+        <!-- Jotform Container for Nonprofits -->
+        <div style="padding: 2rem;">
+<script type="text/javascript" src="https://form.jotform.com/jsform/252715347506357"></script>          <div style="text-align: center; color: #6B7280; padding: 3rem 1rem;">
+            <p style="font-family: 'Noto Sans', sans-serif; font-size: 1rem;">
+              Paste your Nonprofit Jotform embed code here.
+            </p>
+            <p style="font-family: 'Noto Sans', sans-serif; font-size: 0.875rem; margin-top: 0.5rem;">
+              Configure Jotform to redirect to: https://yoursite.com/
+            </p>
+          </div>
+          <!-- END NONPROFIT JOTFORM EMBED CODE -->
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for Cards and Modals -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const donorSurveyModal = document.getElementById('donorSurveyModal');
+      const nonprofitSurveyModal = document.getElementById('nonprofitSurveyModal');
+      const donorSurveyCard = document.getElementById('donorSurveyCard');
+      const nonprofitSurveyCard = document.getElementById('nonprofitSurveyCard');
+      const closeDonorBtn = document.getElementById('closeDonorModal');
+      const closeNonprofitBtn = document.getElementById('closeNonprofitModal');
+      
+      // Open Donor Survey Modal
+      donorSurveyCard.addEventListener('click', function() {
+        donorSurveyModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+      
+      // Open Nonprofit Survey Modal
+      nonprofitSurveyCard.addEventListener('click', function() {
+        nonprofitSurveyModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+      
+      // Close Donor Modal
+      function closeDonorModalFn() {
+        donorSurveyModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+      
+      // Close Nonprofit Modal
+      function closeNonprofitModalFn() {
+        nonprofitSurveyModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+      
+      closeDonorBtn.addEventListener('click', closeDonorModalFn);
+      closeNonprofitBtn.addEventListener('click', closeNonprofitModalFn);
+      
+      // Close modals when clicking outside
+      donorSurveyModal.addEventListener('click', function(e) {
+        if (e.target === donorSurveyModal) {
+          closeDonorModalFn();
+        }
+      });
+      
+      nonprofitSurveyModal.addEventListener('click', function(e) {
+        if (e.target === nonprofitSurveyModal) {
+          closeNonprofitModalFn();
+        }
+      });
+      
+      // Close modals with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (donorSurveyModal.style.display === 'flex') {
+            closeDonorModalFn();
+          }
+          if (nonprofitSurveyModal.style.display === 'flex') {
+            closeNonprofitModalFn();
+          }
+        }
+      });
+      
+      // Card hover effects
+      [donorSurveyCard, nonprofitSurveyCard].forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-4px)';
+          this.style.boxShadow = '0 10px 25px 0 rgba(0, 0, 0, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+          this.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1)';
+        });
+      });
+      
+      // Close button hover effects
+      [closeDonorBtn, closeNonprofitBtn].forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+          this.style.backgroundColor = '#F3F4F6';
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+          this.style.backgroundColor = 'white';
+        });
+      });
+    });
+    </script>
+
+    <style>
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        #donorSurveyModal > div,
+        #nonprofitSurveyModal > div {
+          width: 95%;
+          max-height: 85vh;
+        }
+      }
+    </style>
+
+</body>
+</html>
