@@ -1,7 +1,7 @@
 ---
-// How It Works - Platforma App
-const pageTitle = "How It Works - Platforma";
-const pageDescription = "Discover how Platforma connects nonprofits, donors, suppliers, and recipients to streamline humanitarian aid delivery across Ukraine.";
+// Platforma App - Humanitarian Aid Platform Landing Page
+const pageTitle = "Platforma - Streamline Humanitarian Aid";
+const pageDescription = "The all-in-one platform connecting nonprofits, donors, suppliers, and recipients to deliver transparent & efficient humanitarian aid across Ukraine.";
 ---
 
 <html lang="en">
@@ -10,8 +10,7 @@ const pageDescription = "Discover how Platforma connects nonprofits, donors, sup
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
+    <title>Platforma - Streamline Humanitarian Aid</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -84,10 +83,10 @@ const pageDescription = "Discover how Platforma connects nonprofits, donors, sup
     }
 
     .nav-button.active {
-      color: #182231;
+      color: #1C283A;
       font-weight: 600;
       background: linear-gradient(to right, #F79A1E 0%, #F9B813 25%, #FACF0A 40%, #FBE004 60%, #FBE901 80%, #FCED00 100%);
-      border: 1px solid #182231;
+      border: none;
     }
 
     .nav-button.how-it-works {
@@ -96,51 +95,23 @@ const pageDescription = "Discover how Platforma connects nonprofits, donors, sup
 
     .nav-right {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-right: 64px;
-      height: 138px;
-      position: relative;
-    }
-
-    .sign-in-btn {
-      background: linear-gradient(135deg, #131B27 0%, #182231 25%, #1C283A 50%, #1F2C40 75%, #223046 100%);
-      color: white;
-      padding: 0.5rem 1.5rem;
-      border-radius: 0.25rem;
-      border: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      min-width: 100px;
-      height: 40px;
-      text-align: center;
-      display: flex;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
-      position: absolute;
-      top: 49px;
-      right: 0;
-      white-space: nowrap;
+      justify-content: flex-end;
+      margin-right: 20px;
+      height: 138px;
     }
 
     .language-selector {
-      position: absolute;
-      bottom: 10px;
-      right: 0;
+      position: relative;
     }
 
     .language-select {
       background: white;
       color: #334155;
-      padding: 0.2rem 1.2rem 0.2rem 0.4rem;
+      padding: 0.4rem 2.4rem 0.4rem 0.8rem;
       border-radius: 1rem;
       border: 1px solid #e5e7eb;
-      font-size: 0.6rem;
+      font-size: 1.2rem;
       cursor: pointer;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       appearance: none;
@@ -148,17 +119,74 @@ const pageDescription = "Discover how Platforma connects nonprofits, donors, sup
 
     .language-arrow {
       position: absolute;
-      right: 0.4rem;
+      right: 0.8rem;
       top: 50%;
       transform: translateY(-50%);
       pointer-events: none;
       color: #334155;
-      font-size: 0.5rem;
+      font-size: 1rem;
     }
 
     /* Mobile Navigation */
     .mobile-nav {
       display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 1rem 4rem;
+      background-color: #f9fafb;
+    }
+    
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #1f2937;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: #6b7280;
+      max-width: 64rem;
+      margin: 0 auto 2rem;
+    }
+    
+    .cta-button {
+      background-color: #1e293b;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s ease;
+      margin-bottom: 3rem;
+    }
+    
+    .cta-button:hover {
+      background-color: #334155;
+    }
+    
+    /* Dashboard Preview */
+    .dashboard-preview {
+      max-width: 1152px;
+      margin: 0 auto;
+    }
+    
+    .dashboard-preview img {
+      outline: none !important;
+      border: none !important;
+      -webkit-tap-highlight-color: transparent;
     }
 
     /* Responsive breakpoints */
@@ -197,13 +225,6 @@ const pageDescription = "Discover how Platforma connects nonprofits, donors, sup
       
       .nav-button.how-it-works {
         min-width: 70px;
-      }
-      
-      .sign-in-btn {
-        min-width: 80px;
-        height: 36px;
-        font-size: 0.75rem;
-        top: 51px;
       }
       
       .nav-right {
@@ -249,19 +270,16 @@ const pageDescription = "Discover how Platforma connects nonprofits, donors, sup
         margin-right: 8px;
       }
       
-      .sign-in-btn {
-        top: 30px;
-        height: 32px;
-        min-width: 70px;
-        font-size: 0.7rem;
-      }
-      
       .language-selector {
         bottom: 5px;
       }
       
       body {
         padding-bottom: 80px;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
       }
     }
 
@@ -277,14 +295,6 @@ const pageDescription = "Discover how Platforma connects nonprofits, donors, sup
       .nav-right {
         height: 80px;
         margin-right: 4px;
-      }
-      
-      .sign-in-btn {
-        top: 24px;
-        height: 28px;
-        min-width: 60px;
-        font-size: 0.65rem;
-        padding: 0.25rem 0.5rem;
       }
       
       .mobile-nav .nav-button {
@@ -313,7 +323,6 @@ const pageDescription = "Discover how Platforma connects nonprofits, donors, sup
         </div>
         
         <div class="nav-right">
-          <button class="sign-in-btn">Sign In</button>
           <div class="language-selector">
             <select class="language-select">
               <option value="en">🇬🇧 EN</option>
