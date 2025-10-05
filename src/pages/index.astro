@@ -1,4 +1,6 @@
 ---
+import { Analytics } from '@vercel/analytics/astro';
+
 // Platforma App - Humanitarian Aid Platform Landing Page
 const pageTitle = "Platforma - Streamline Humanitarian Aid";
 const pageDescription = "The all-in-one platform connecting nonprofits, donors, suppliers, and recipients to deliver transparent & efficient humanitarian aid across Ukraine.";
@@ -1028,5 +1030,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </footer>
+      <Analytics />
+
 </body>
 </html>     
