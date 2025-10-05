@@ -1,5 +1,4 @@
 ---
-import { Analytics } from '@vercel/analytics/astro';
 
 // Platforma App - Humanitarian Aid Platform Landing Page
 const pageTitle = "Platforma - Streamline Humanitarian Aid";
@@ -8,6 +7,10 @@ const pageDescription = "The all-in-one platform connecting nonprofits, donors, 
 
 <html lang="en">
 <head>
+  <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
@@ -1030,7 +1033,5 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </footer>
-      <Analytics />
-
 </body>
 </html>     
